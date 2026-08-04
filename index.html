@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Academy — Backend Development Training & Career Counselling | Rishikesh</title>
-  <meta name="description" content="Learn Node.js, NestJS, PostgreSQL, Docker and Microservices from an industry expert with 4+ years of real production experience. Online & Offline backend development courses and career counselling for aspiring developers across India. Book a free demo session today!" />
+  <meta name="description" content="Learn Node.js, NestJS, PostgreSQL, Docker and Microservices from an industry expert with 6+ years of real production experience. Online & Offline backend development courses and career counselling for aspiring developers across India. Book a free demo session today!" />
   <meta name="keywords" content="backend development course Rishikesh, Node.js NestJS training India, online coding classes Uttarakhand, career counselling developers, PostgreSQL Docker Microservices course, software developer mentor India" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -533,7 +533,7 @@
       </div>
       <div class="hero-stats">
         <div class="stat-card">
-          <div class="stat-number">5+</div>
+          <div class="stat-number">6+</div>
           <div class="stat-label">Years Industry Experience</div>
         </div>
         <div class="stat-card">
@@ -563,7 +563,7 @@
           <p>We specialize in training aspiring software developers in modern backend technologies including Node.js, NestJS, TypeScript, PostgreSQL, Redis, Docker, and Microservices Architecture.</p>
           <p>Whether you are a fresher looking to start your tech career or a working professional wanting to upgrade your skills — Tech Academy provides personalized, industry-focused training that gets you job-ready.</p>
           <div class="about-highlights">
-            <div class="highlight-item">Industry expert with 4+ years production experience</div>
+            <div class="highlight-item">Industry expert with 6+ years production experience</div>
             <div class="highlight-item">Real project-based learning — not just theory</div>
             <div class="highlight-item">One-on-one personalized sessions</div>
             <div class="highlight-item">Career counselling + Resume review included</div>
@@ -648,7 +648,7 @@
         <div class="why-card">
           <span class="why-icon">🏭</span>
           <h3>Industry Expert Mentor</h3>
-          <p>4+ years building production apps serving 10,000+ users. Real experience, not textbook theory.</p>
+          <p>6+ years building production apps serving 10,000+ users. Real experience, not textbook theory.</p>
         </div>
         <div class="why-card">
           <span class="why-icon">🎯</span>
@@ -678,7 +678,7 @@
           <div class="section-label">Meet The Founder</div>
           <div class="founder-name">Aditya Narayan Gaur</div>
           <div class="founder-role">Backend Engineer & Mentor | Founder, Tech Academy</div>
-          <p class="founder-bio">Hi! I'm Aditya — a Full-Stack Backend Engineer with 4+ years of professional experience building production-grade applications. I have worked with product-based companies building scalable backend systems serving 10,000+ users using Node.js, NestJS, PostgreSQL, Redis, Docker and AWS.<br><br>I started Tech Academy because I believe every passionate developer deserves a mentor who teaches real-world skills — not just theory. My teaching approach is simple: <strong>Learn it. Build it. Get Hired.</strong></p>
+          <p class="founder-bio">Hi! I'm Aditya — a Full-Stack Backend Engineer with 6+ years of professional experience building production-grade applications. I have worked with product-based companies building scalable backend systems serving 10,000+ users using Node.js, NestJS, PostgreSQL, Redis, Docker and AWS.<br><br>I started Tech Academy because I believe every passionate developer deserves a mentor who teaches real-world skills — not just theory. My teaching approach is simple: <strong>Learn it. Build it. Get Hired.</strong></p>
           <div class="founder-achievements">
             <div class="achievement"><div class="achievement-dot"></div>Built APIs serving 10,000+ users in production</div>
             <div class="achievement"><div class="achievement-dot"></div>Optimised DB queries from 1 second to 10ms</div>
@@ -952,9 +952,66 @@
           </div>
         </div>
         <div class="contact-right">
-          <h3>Free 30-Minute Consultation</h3>
-          <p>Not sure where to start? Book a free consultation call. We will discuss your current skills, career goals, and the best path forward — zero pressure, zero commitment.</p>
-          <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="btn-primary">Book Free Consultation</a>
+          <h3>Book Free 30-Minute Consultation</h3>
+          <p>Not sure where to start? Fill the form below — we will discuss your current skills, career goals, and the best path forward. Zero pressure, zero commitment.</p>
+
+          <form name="consultation-booking" method="POST" data-netlify="true" id="consultForm" netlify-honeypot="bot-field2" style="margin-top:24px">
+            <input type="hidden" name="form-name" value="consultation-booking" />
+            <input type="hidden" name="bot-field2" />
+
+            <div style="display:flex;flex-direction:column;gap:14px;">
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                <div class="form-group">
+                  <label style="color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Full Name *</label>
+                  <input type="text" name="name" placeholder="Your name" required
+                    style="background:var(--light);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;" />
+                </div>
+                <div class="form-group">
+                  <label style="color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Phone *</label>
+                  <input type="tel" name="phone" placeholder="+91 98765 43210" required
+                    style="background:var(--light);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label style="color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Email *</label>
+                <input type="email" name="email" placeholder="you@email.com" required
+                  style="background:var(--light);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;" />
+              </div>
+
+              <div class="form-group">
+                <label style="color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">What do you need help with? *</label>
+                <select name="help_type" required
+                  style="background:var(--light);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;">
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="backend-training">Backend Development Training</option>
+                  <option value="career-counselling">Career Counselling</option>
+                  <option value="resume-review">Resume Review</option>
+                  <option value="mock-interview">Mock Interview Prep</option>
+                  <option value="not-sure">Not Sure — Need Guidance</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label style="color:var(--navy);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Your Message</label>
+                <textarea name="message" rows="3" placeholder="Tell us about your current situation and goals..."
+                  style="background:var(--light);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;resize:vertical;"></textarea>
+              </div>
+
+              <button type="submit" id="consultSubmitBtn"
+                style="background:var(--teal);color:white;border:none;border-radius:10px;padding:14px 24px;font-size:15px;font-weight:700;font-family:Inter,sans-serif;cursor:pointer;transition:all 0.2s;width:100%;">
+                Book Free Consultation →
+              </button>
+
+              <div id="consultSuccess" style="display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:16px;text-align:center;">
+                <div style="font-size:28px;margin-bottom:8px;">✅</div>
+                <p style="color:#166534;font-weight:700;margin-bottom:4px;">Request Received!</p>
+                <p style="color:#166534;font-size:13px;">Aditya will contact you within 24 hours.</p>
+              </div>
+
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -997,6 +1054,40 @@
 
     // Auto play
     setInterval(() => goTo(current >= maxSlide ? 0 : current + 1), 4000);
+
+    // Consultation Form
+    const consultForm = document.getElementById('consultForm');
+    const consultSuccess = document.getElementById('consultSuccess');
+    const consultBtn = document.getElementById('consultSubmitBtn');
+
+    if (consultForm) {
+      consultForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        consultBtn.textContent = 'Sending...';
+        consultBtn.disabled = true;
+
+        const formData = new FormData(consultForm);
+        try {
+          const res = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          });
+          if (res.ok) {
+            consultForm.style.display = 'none';
+            consultSuccess.style.display = 'block';
+          } else {
+            alert('Kuch problem aayi — WhatsApp pe contact karein!');
+            consultBtn.textContent = 'Book Free Consultation →';
+            consultBtn.disabled = false;
+          }
+        } catch(err) {
+          alert('Network error — WhatsApp pe contact karein!');
+          consultBtn.textContent = 'Book Free Consultation →';
+          consultBtn.disabled = false;
+        }
+      });
+    }
 
     window.addEventListener('resize', () => {
       perView = window.innerWidth <= 768 ? 1 : 3;
