@@ -1199,6 +1199,7 @@
   });
 
   // CHATBOT
+  // document.addEventListener('DOMContentLoaded', function() {
   const chatBtn = document.getElementById('chatBtn');
   const chatWindow = document.getElementById('chatWindow');
   const chatClose = document.getElementById('chatClose');
@@ -1300,10 +1301,11 @@ Short aur friendly answers de. 2-3 sentences max. Agar demo book karna ho toh Wh
     chatInput.focus();
   }
 
-  function sendQuick(msg) { sendMessage(msg); }
+  window.sendQuick = function(msg) { sendMessage(msg); }
 
   chatSend.addEventListener('click', () => sendMessage(chatInput.value));
   chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
+  // }); // DOMContentLoaded end
 </script>
 
 <!-- COOKIE BANNER -->
