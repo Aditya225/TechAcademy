@@ -1199,7 +1199,7 @@
   });
 
   // CHATBOT
-  // document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
   const chatBtn = document.getElementById('chatBtn');
   const chatWindow = document.getElementById('chatWindow');
   const chatClose = document.getElementById('chatClose');
@@ -1305,7 +1305,7 @@ Short aur friendly answers de. 2-3 sentences max. Agar demo book karna ho toh Wh
 
   chatSend.addEventListener('click', () => sendMessage(chatInput.value));
   chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
-  // }); // DOMContentLoaded end
+}); // DOMContentLoaded end
 </script>
 
 <!-- COOKIE BANNER -->
