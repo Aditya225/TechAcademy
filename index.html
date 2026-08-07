@@ -1173,17 +1173,17 @@
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
   const cookieDecline = document.getElementById('cookieDecline');
-
+  console.log("
   if(localStorage.getItem('cookieConsent')) {
     cookieBanner.style.display = 'none';
   }
 
   function hideBanner() {
-    cookieBanner.classList.add('hide');
+    document.getElementById('cookieBanner').classList.add('hide');
     setTimeout(() => cookieBanner.style.display = 'none', 300);
   }
 
-  cookieAccept.addEventListener('click', () => {
+  document.getElementById('cookieAccept').addEventListener('click', () => {
     localStorage.setItem('cookieConsent', 'accepted');
     hideBanner();
   });
