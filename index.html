@@ -390,6 +390,210 @@
       .form-grid,.consult-2col{grid-template-columns:1fr}
       .founder-wins{grid-template-columns:1fr}
     }
+
+    /* COOKIE BANNER */
+    .cookie-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a2e;
+      border: 1px solid rgba(232,168,124,0.3);
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 9999;
+      max-width: 680px;
+      width: calc(100% - 40px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: slideUp 0.4s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+      to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+    .cookie-banner.hide {
+      animation: slideDown 0.3s ease forwards;
+    }
+    @keyframes slideDown {
+      from { transform: translateX(-50%) translateY(0); opacity: 1; }
+      to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
+    }
+    .cookie-icon { font-size: 32px; flex-shrink: 0; }
+    .cookie-text { flex: 1; }
+    .cookie-text h4 {
+      font-size: 14px; font-weight: 700;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .cookie-text p {
+      font-size: 12px; color: var(--gray); line-height: 1.5;
+    }
+    .cookie-text a {
+      color: var(--warm); text-decoration: none; font-weight: 600;
+    }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-accept {
+      background: var(--warm); color: var(--dark);
+      border: none; border-radius: 50px;
+      padding: 10px 20px; font-size: 13px;
+      font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .cookie-accept:hover { background: var(--warm2); }
+    .cookie-decline {
+      background: transparent; color: var(--gray);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px; padding: 10px 20px;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .cookie-decline:hover { border-color: var(--gray); color: var(--white); }
+    @media (max-width: 600px) {
+      .cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        bottom: 16px;
+        padding: 20px;
+      }
+      .cookie-btns { width: 100%; justify-content: center; }
+    }
+
+    /* CHATBOT */
+    .chat-btn {
+      position: fixed; bottom: 100px; right: 24px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: var(--warm); color: var(--dark);
+      border: none; font-size: 28px; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(232,168,124,0.4);
+      z-index: 9998; transition: all 0.3s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .chat-btn:hover { transform: scale(1.1); }
+    .chat-window {
+      position: fixed; bottom: 170px; right: 24px;
+      width: 360px; height: 500px;
+      background: #1a1a2e;
+      border: 1px solid rgba(232,168,124,0.3);
+      border-radius: 20px;
+      display: none; flex-direction: column;
+      z-index: 9997;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+      animation: chatOpen 0.3s ease;
+    }
+    @keyframes chatOpen {
+      from { opacity: 0; transform: translateY(20px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .chat-window.open { display: flex; }
+    .chat-header {
+      background: linear-gradient(135deg, var(--warm), var(--warm2));
+      padding: 16px 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .chat-header-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .chat-header-info h4 { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .chat-header-info p { font-size: 12px; color: rgba(15,15,26,0.7); }
+    .chat-header-close {
+      margin-left: auto; background: none; border: none;
+      font-size: 20px; cursor: pointer; color: var(--dark);
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .chat-header-close:hover { opacity: 1; }
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+    .chat-msg {
+      max-width: 85%; padding: 10px 14px;
+      border-radius: 16px; font-size: 14px; line-height: 1.5;
+      animation: msgIn 0.2s ease;
+    }
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .chat-msg.bot {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.9);
+      border-radius: 4px 16px 16px 16px;
+      align-self: flex-start;
+    }
+    .chat-msg.user {
+      background: var(--warm); color: var(--dark);
+      font-weight: 500;
+      border-radius: 16px 4px 16px 16px;
+      align-self: flex-end;
+    }
+    .chat-typing {
+      display: flex; gap: 4px; align-items: center;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px 16px 16px 16px;
+      align-self: flex-start;
+      width: fit-content;
+    }
+    .chat-typing span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--warm); animation: typing 1s infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing { 0%,60%,100% { opacity:0.3; transform:translateY(0); } 30% { opacity:1; transform:translateY(-4px); } }
+    .chat-quick {
+      padding: 8px 16px; display: flex; gap: 8px;
+      flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .quick-btn {
+      background: rgba(232,168,124,0.1);
+      border: 1px solid rgba(232,168,124,0.2);
+      color: var(--warm); padding: 6px 12px;
+      border-radius: 50px; font-size: 12px;
+      font-weight: 600; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .quick-btn:hover { background: var(--warm); color: var(--dark); }
+    .chat-input-wrap {
+      padding: 12px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; gap: 10px; align-items: center;
+    }
+    .chat-input {
+      flex: 1; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px; padding: 10px 16px;
+      color: var(--white); font-size: 14px;
+      font-family: 'Inter', sans-serif; outline: none;
+      transition: border 0.2s;
+    }
+    .chat-input::placeholder { color: rgba(255,255,255,0.3); }
+    .chat-input:focus { border-color: var(--warm); }
+    .chat-send {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--warm); color: var(--dark);
+      border: none; font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .chat-send:hover { background: var(--warm2); transform: scale(1.05); }
+    @media (max-width: 768px) {
+      .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 160px; }
+    }
   </style>
 </head>
 <body>
@@ -964,6 +1168,183 @@
       else { alert('Problem aayi — WhatsApp pe contact karein!'); consultBtn.textContent='Book Free Consultation →'; consultBtn.disabled=false; }
     } catch(err) { alert('Network error!'); consultBtn.textContent='Book Free Consultation →'; consultBtn.disabled=false; }
   });
+
+  // Cookie Banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAccept = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
+
+  if(localStorage.getItem('cookieConsent')) {
+    cookieBanner.style.display = 'none';
+  }
+
+  function hideBanner() {
+    cookieBanner.classList.add('hide');
+    setTimeout(() => cookieBanner.style.display = 'none', 300);
+  }
+
+  cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideBanner();
+  });
+
+  cookieDecline.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    hideBanner();
+  });
+
+  // CHATBOT
+  const chatBtn = document.getElementById('chatBtn');
+  const chatWindow = document.getElementById('chatWindow');
+  const chatClose = document.getElementById('chatClose');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  const quickReplies = document.getElementById('quickReplies');
+
+  chatBtn.addEventListener('click', () => {
+    chatWindow.classList.toggle('open');
+    if(chatWindow.classList.contains('open')) chatInput.focus();
+  });
+  chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+  function addMsg(text, type) {
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg ' + type;
+    msg.innerHTML = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return msg;
+  }
+
+  function showTyping() {
+    const t = document.createElement('div');
+    t.className = 'chat-typing'; t.id = 'typingIndicator';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(t);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    const t = document.getElementById('typingIndicator');
+    if(t) t.remove();
+  }
+
+  async function sendMessage(userMsg) {
+    if(!userMsg.trim()) return;
+    quickReplies.style.display = 'none';
+    addMsg(userMsg, 'user');
+    chatInput.value = '';
+    showTyping();
+    chatSend.disabled = true;
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1000,
+          system: `Tu Tech Academy ka friendly AI assistant hai. Hinglish mein baat kar (Hindi + English mix).
+
+Tech Academy ke baare mein information:
+- Founder: Aditya Narayan Gaur — 6+ years backend experience
+- Location: Rishikesh, Uttarakhand
+- Mode: Online (Zoom) + Offline (Rishikesh)
+- Contact: gauraditya50@gmail.com | +91-9760504977
+- Website: techacademy.netlify.app
+
+Services:
+1. Backend Development Training (3 months)
+   - Month 1: JavaScript, TypeScript, Node.js, REST APIs, PostgreSQL
+   - Month 2: NestJS, JWT Auth, Redis, DB Optimization, Rate Limiting
+   - Month 3: Docker, Microservices, System Design, Interview Prep
+   
+2. Career Counselling - Career roadmap, job search strategy
+3. Resume Review - ATS friendly, 24hr turnaround
+4. Mock Interviews - Technical + System Design
+
+Fees: Demo session FREE hai. Course fees ke liye demo book karo.
+
+Student Placements:
+- Shrikar P. → Big 4 Company
+- Tarun → Deloitte
+- Veda → Tech Mahindra
+- Nihal → Honeywell
+- Aaditya Bhatt → Software Developer
+
+Demo Book karne ke liye: Website pe "Book Free Demo" section mein form fill karo
+Ya WhatsApp karo: +91-9760504977
+
+Short aur friendly answers de. 2-3 sentences max. Agar demo book karna ho toh WhatsApp number ya website link mention kar.`,
+          messages: [{ role: 'user', content: userMsg }]
+        })
+      });
+
+      hideTyping();
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || 'Kuch problem aayi! WhatsApp pe contact karein: +91-9760504977';
+      addMsg(reply, 'bot');
+
+    } catch(err) {
+      hideTyping();
+      addMsg('Abhi network issue hai! WhatsApp pe contact karein: <strong>+91-9760504977</strong>', 'bot');
+    }
+
+    chatSend.disabled = false;
+    chatInput.focus();
+  }
+
+  function sendQuick(msg) { sendMessage(msg); }
+
+  chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+  chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
 </script>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-icon">🍪</div>
+  <div class="cookie-text">
+    <h4>We use cookies</h4>
+    <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies. <a href="#">Learn more</a></p>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookieAccept">Accept All</button>
+    <button class="cookie-decline" id="cookieDecline">Decline</button>
+  </div>
+</div>
+
+<!-- CHATBOT -->
+<button class="chat-btn" id="chatBtn" title="Chat with us">💬</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-avatar">🎓</div>
+    <div class="chat-header-info">
+      <h4>Tech Academy Assistant</h4>
+      <p>Online • Usually replies instantly</p>
+    </div>
+    <button class="chat-header-close" id="chatClose">✕</button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">
+      Namaste! 👋 Main Tech Academy ka assistant hoon.<br><br>
+      Aap kya jaanna chahte hain? Courses, fees, curriculum, ya demo book karna hai?
+    </div>
+  </div>
+
+  <div class="chat-quick" id="quickReplies">
+    <button class="quick-btn" onclick="sendQuick('Courses aur fees kya hain?')">💰 Fees</button>
+    <button class="quick-btn" onclick="sendQuick('Demo book karna hai')">📅 Book Demo</button>
+    <button class="quick-btn" onclick="sendQuick('Curriculum kya hai?')">📚 Curriculum</button>
+    <button class="quick-btn" onclick="sendQuick('Students kahan placed hue?')">🏆 Placements</button>
+  </div>
+
+  <div class="chat-input-wrap">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Apna question likho..."/>
+    <button class="chat-send" id="chatSend">➤</button>
+  </div>
+</div>
 </body>
 </html>
