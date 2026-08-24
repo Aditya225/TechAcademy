@@ -759,7 +759,7 @@
 </div>
 
 <!-- CHAT -->
-<button class="chat-btn" id="chatBtn" title="Chat with us">💬</button>
+<!-- <button class="chat-btn" id="chatBtn" title="Chat with us">💬</button>
 <div class="chat-window" id="chatWindow">
   <div class="chat-header">
     <div class="chat-header-avatar">🎓</div>
@@ -779,7 +779,7 @@
     <input type="text" class="chat-input" id="chatInput" placeholder="Apna question likho..."/>
     <button class="chat-send" id="chatSend">➤</button>
   </div>
-</div>
+</div> -->
 
 <script>
   // Process tabs
@@ -862,92 +862,92 @@
     }
 
     // Chatbot
-    const chatBtn = document.getElementById('chatBtn');
-    const chatWindow = document.getElementById('chatWindow');
-    const chatClose = document.getElementById('chatClose');
-    const chatMessages = document.getElementById('chatMessages');
-    const chatInput = document.getElementById('chatInput');
-    const chatSend = document.getElementById('chatSend');
-    const quickReplies = document.getElementById('quickReplies');
+//     const chatBtn = document.getElementById('chatBtn');
+//     const chatWindow = document.getElementById('chatWindow');
+//     const chatClose = document.getElementById('chatClose');
+//     const chatMessages = document.getElementById('chatMessages');
+//     const chatInput = document.getElementById('chatInput');
+//     const chatSend = document.getElementById('chatSend');
+//     const quickReplies = document.getElementById('quickReplies');
 
-    if(chatBtn) {
-      chatBtn.addEventListener('click', () => { chatWindow.classList.toggle('open'); if(chatWindow.classList.contains('open')) chatInput.focus(); });
-      chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+//     if(chatBtn) {
+//       chatBtn.addEventListener('click', () => { chatWindow.classList.toggle('open'); if(chatWindow.classList.contains('open')) chatInput.focus(); });
+//       chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 
-      function addMsg(text, type) {
-        const msg = document.createElement('div');
-        msg.className = 'chat-msg ' + type;
-        msg.innerHTML = text;
-        chatMessages.appendChild(msg);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
+//       function addMsg(text, type) {
+//         const msg = document.createElement('div');
+//         msg.className = 'chat-msg ' + type;
+//         msg.innerHTML = text;
+//         chatMessages.appendChild(msg);
+//         chatMessages.scrollTop = chatMessages.scrollHeight;
+//       }
 
-      function showTyping() {
-        const t = document.createElement('div');
-        t.className = 'chat-typing'; t.id = 'typingIndicator';
-        t.innerHTML = '<span></span><span></span><span></span>';
-        chatMessages.appendChild(t);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
+//       function showTyping() {
+//         const t = document.createElement('div');
+//         t.className = 'chat-typing'; t.id = 'typingIndicator';
+//         t.innerHTML = '<span></span><span></span><span></span>';
+//         chatMessages.appendChild(t);
+//         chatMessages.scrollTop = chatMessages.scrollHeight;
+//       }
 
-      function hideTyping() { const t = document.getElementById('typingIndicator'); if(t) t.remove(); }
+//       function hideTyping() { const t = document.getElementById('typingIndicator'); if(t) t.remove(); }
 
-      async function sendMessage(userMsg) {
-        if(!userMsg.trim()) return;
-        quickReplies.style.display = 'none';
-        addMsg(userMsg, 'user');
-        chatInput.value = '';
-        showTyping();
-        chatSend.disabled = true;
-        try {
-          const res = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              model: 'claude-sonnet-4-6',
-              max_tokens: 1000,
-              system: `Tu Tech Academy ka friendly AI assistant hai. Hinglish mein baat kar.
+//       async function sendMessage(userMsg) {
+//         if(!userMsg.trim()) return;
+//         quickReplies.style.display = 'none';
+//         addMsg(userMsg, 'user');
+//         chatInput.value = '';
+//         showTyping();
+//         chatSend.disabled = true;
+//         try {
+//           const res = await fetch('https://api.anthropic.com/v1/messages', {
+//             method: 'POST',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//               model: 'claude-sonnet-4-6',
+//               max_tokens: 1000,
+//               system: `Tu Tech Academy ka friendly AI assistant hai. Hinglish mein baat kar.
 
-Tech Academy ek 3-in-1 platform hai:
-1. TRAIN - Backend development training (Node.js, NestJS, PostgreSQL, Redis, Docker)
-2. PLACE - Companies ke liye tech talent placement (zero cost until hire)
-3. BUILD - Businesses ke liye backend development projects
+// Tech Academy ek 3-in-1 platform hai:
+// 1. TRAIN - Backend development training (Node.js, NestJS, PostgreSQL, Redis, Docker)
+// 2. PLACE - Companies ke liye tech talent placement (zero cost until hire)
+// 3. BUILD - Businesses ke liye backend development projects
 
-Founder: Aditya Narayan Gaur - 6+ years experience, 10,000+ users served
-Location: Rishikesh, Uttarakhand | Online pan-India
-Contact: gauraditya50@gmail.com | +91-9760504977
-Website: techacademy.netlify.app
-MSME Registered | Govt. of India
+// Founder: Aditya Narayan Gaur - 6+ years experience, 10,000+ users served
+// Location: Rishikesh, Uttarakhand | Online pan-India
+// Contact: gauraditya50@gmail.com | +91-9760504977
+// Website: techacademy.netlify.app
+// MSME Registered | Govt. of India
 
-Student Placements: Shrikar P (Big 4), Tarun (Deloitte), Veda (Tech Mahindra), Nihal (Honeywell)
+// Student Placements: Shrikar P (Big 4), Tarun (Deloitte), Veda (Tech Mahindra), Nihal (Honeywell)
 
-Services:
-FOR INDIVIDUALS: Backend Training (3 months), Resume Review, Mock Interviews, Career Counselling
-FOR COMPANIES: Tech talent placement - share requirement, we screen, you interview, pay only on hire
-FOR BUSINESSES: Backend development, AI/LLM integration, DevOps, Performance optimization
+// Services:
+// FOR INDIVIDUALS: Backend Training (3 months), Resume Review, Mock Interviews, Career Counselling
+// FOR COMPANIES: Tech talent placement - share requirement, we screen, you interview, pay only on hire
+// FOR BUSINESSES: Backend development, AI/LLM integration, DevOps, Performance optimization
 
-Demo/Contact ke liye: Website pe form fill karo ya WhatsApp: +91-9760504977
+// Demo/Contact ke liye: Website pe form fill karo ya WhatsApp: +91-9760504977
 
-Short friendly answers do. 2-3 sentences max.`,
-              messages: [{ role: 'user', content: userMsg }]
-            })
-          });
-          hideTyping();
-          const data = await res.json();
-          const reply = data.content?.[0]?.text || 'Kuch problem aayi! WhatsApp pe contact karein: +91-9760504977';
-          addMsg(reply, 'bot');
-        } catch(err) {
-          hideTyping();
-          addMsg('Network issue hai! WhatsApp pe contact karein: <strong>+91-9760504977</strong>', 'bot');
-        }
-        chatSend.disabled = false;
-        chatInput.focus();
-      }
+// Short friendly answers do. 2-3 sentences max.`,
+//               messages: [{ role: 'user', content: userMsg }]
+//             })
+//           });
+//           hideTyping();
+//           const data = await res.json();
+//           const reply = data.content?.[0]?.text || 'Kuch problem aayi! WhatsApp pe contact karein: +91-9760504977';
+//           addMsg(reply, 'bot');
+//         } catch(err) {
+//           hideTyping();
+//           addMsg('Network issue hai! WhatsApp pe contact karein: <strong>+91-9760504977</strong>', 'bot');
+//         }
+//         chatSend.disabled = false;
+//         chatInput.focus();
+//       }
 
-      window.sendQuick = function(msg) { sendMessage(msg); };
-      chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-      chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
-    }
+//       window.sendQuick = function(msg) { sendMessage(msg); };
+//       chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+//       chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
+//     }
 
   });
 </script>
