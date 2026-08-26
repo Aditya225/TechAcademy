@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backend Development Training | Techs Academy</title>
+  <meta name="description" content="Learn backend development with Node.js, NestJS, PostgreSQL, Redis and Docker through practical, job-focused training at Techs Academy." />
+  <meta name="keywords" content="backend development course, Node.js course, NestJS training, backend training Rishikesh, backend development training India" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --dark:#0f0f1a;--dark2:#1a1a2e;--dark3:#16213e;
+      --warm:#E8A87C;--warm2:#d4915f;--teal:#2EC4B6;
+      --white:#fff;--gray:#94a3b8;--light:#f8f9fa;
+      --card:rgba(255,255,255,.045);--border:rgba(255,255,255,.09);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,sans-serif;background:var(--dark);color:var(--white);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,26,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 32px}
+    .nav-inner{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:"Playfair Display",serif;font-size:22px;font-weight:700}.logo span{color:var(--warm)}
+    .links{display:flex;gap:25px;list-style:none;font-size:14px;color:rgba(255,255,255,.72)}
+    .links a:hover{color:var(--warm)}
+    .nav-btn,.btn-primary{background:var(--warm);color:var(--dark);padding:11px 21px;border-radius:50px;font-size:14px;font-weight:800}
+    .nav-btn:hover,.btn-primary:hover{background:var(--warm2)}
+    .hero{padding:150px 25px 85px;background:
+      radial-gradient(circle at 15% 30%,rgba(232,168,124,.11),transparent 35%),
+      radial-gradient(circle at 85% 20%,rgba(46,196,182,.08),transparent 30%),var(--dark)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
+    .tag{display:inline-block;color:var(--warm);background:rgba(232,168,124,.1);border:1px solid rgba(232,168,124,.25);padding:7px 15px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:.4px;margin-bottom:20px}
+    h1,h2,h3{font-family:"Playfair Display",serif}
+    h1{font-size:54px;line-height:1.12;margin-bottom:20px}
+    h1 em{color:var(--warm);font-style:normal}
+    .hero p{font-size:17px;color:var(--gray);max-width:650px;margin-bottom:28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-secondary{border:1px solid rgba(255,255,255,.18);padding:11px 21px;border-radius:50px;font-weight:700;font-size:14px}
+    .btn-secondary:hover{border-color:var(--warm);color:var(--warm)}
+    .hero-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:28px}
+    .hero-card h3{font-size:25px;margin-bottom:8px}.hero-card>p{font-size:13px;margin-bottom:20px}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .quick div{padding:13px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.025)}
+    .quick strong{display:block;color:var(--warm);font-size:17px}.quick span{font-size:11px;color:var(--gray)}
+    section{padding:85px 25px}
+    .dark2{background:var(--dark2)}
+    .label{color:var(--warm);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+    .section-title{font-size:38px;line-height:1.2;margin-bottom:13px}
+    .section-sub{color:var(--gray);max-width:680px;font-size:15px}
+    .header{margin-bottom:42px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px;transition:.25s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(232,168,124,.35)}
+    .course-icon{font-size:32px;margin-bottom:14px}
+    .card h3{font-size:22px;margin-bottom:8px}.card p{font-size:13px;color:var(--gray)}
+    .badge{display:inline-block;margin-top:15px;padding:5px 11px;border-radius:50px;background:rgba(232,168,124,.1);border:1px solid rgba(232,168,124,.2);color:var(--warm);font-size:11px;font-weight:700}
+    .course-featured{border-color:rgba(232,168,124,.4);position:relative}
+    .featured{position:absolute;top:16px;right:16px;color:var(--dark);background:var(--warm);padding:5px 9px;border-radius:50px;font-size:9px;font-weight:800}
+    .curriculum{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .module{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:22px}
+    .module-number{color:var(--warm);font-weight:800;font-size:12px;letter-spacing:1px}
+    .module h3{font-size:19px;margin:8px 0 12px}
+    .module ul{list-style:none}.module li{font-size:13px;color:var(--gray);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .module li:last-child{border:0}.module li:before{content:"✓";color:var(--teal);font-weight:800;margin-right:8px}
+    .outcomes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .outcome{display:flex;gap:13px;padding:18px;border:1px solid var(--border);background:var(--card);border-radius:15px}
+    .check{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(46,196,182,.12);color:var(--teal);flex:none}
+    .outcome h3{font-family:Inter,sans-serif;font-size:14px;margin-bottom:3px}.outcome p{font-size:12px;color:var(--gray)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step{text-align:center;padding:24px 14px}
+    .step-num{width:45px;height:45px;border:2px solid var(--warm);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--warm);font-weight:800;margin:0 auto 14px}
+    .step h3{font-size:18px;margin-bottom:6px}.step p{font-size:12px;color:var(--gray)}
+    .mentor{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}
+    .mentor-box{background:linear-gradient(145deg,rgba(232,168,124,.1),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:24px;padding:35px;text-align:center}
+    .avatar{width:110px;height:110px;border-radius:50%;margin:auto auto 16px;background:var(--dark3);border:2px solid var(--warm);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:42px;color:var(--warm)}
+    .mentor-box h3{font-size:25px}.mentor-box p{color:var(--gray);font-size:13px}
+    .mentor-text p{color:var(--gray);font-size:15px;margin:14px 0}
+    .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{padding:6px 12px;border-radius:50px;background:rgba(232,168,124,.08);color:var(--warm);border:1px solid rgba(232,168,124,.18);font-size:11px;font-weight:700}
+    .faq{max-width:800px}.faq-item{border-bottom:1px solid var(--border);padding:19px 0}.faq-item h3{font-family:Inter,sans-serif;font-size:15px;margin-bottom:5px}.faq-item p{font-size:13px;color:var(--gray)}
+    .cta{text-align:center;background:radial-gradient(circle at 50% 0,rgba(232,168,124,.13),transparent 45%),var(--dark2)}
+    .cta h2{font-size:42px;margin-bottom:12px}.cta p{color:var(--gray);max-width:600px;margin:0 auto 25px}
+    form{max-width:760px;margin:30px auto 0;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:25px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}
+    label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;color:rgba(255,255,255,.7)}
+    input,select,textarea{width:100%;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;padding:12px;font:14px Inter;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--warm)}select option{background:var(--dark2)}
+    textarea{min-height:100px;resize:vertical}.submit{border:0;cursor:pointer;margin-top:15px;width:100%;font:800 15px Inter}
+    .note{text-align:center;color:var(--gray);font-size:11px;margin-top:10px}
+    footer{padding:30px 25px;text-align:center;border-top:1px solid var(--border);color:rgba(255,255,255,.35);font-size:12px}
+    footer span{color:var(--warm)}
+    @media(max-width:800px){
+      .links{display:none}.hero-grid,.mentor{grid-template-columns:1fr;gap:35px}h1{font-size:39px}
+      .cards,.curriculum{grid-template-columns:1fr}.outcomes{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}
+      .form-grid{grid-template-columns:1fr}.full{grid-column:auto}.cta h2{font-size:32px}
+    }
+  
+    .form-status{font-family:Inter,sans-serif}
+    .w3-form button:disabled{opacity:.65;cursor:not-allowed}
+    .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Techs<span> Academy</span></a>
+    <ul class="links">
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#outcomes">Outcomes</a></li>
+      <li><a href="#mentor">Mentor</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="nav-btn" href="#apply">Book Free Counselling</a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="tag">✦ Company-Oriented · Practical · 1:1 Mentoring</div>
+      <h1>Become a <em>Production-Ready</em> Backend Engineer.</h1>
+      <p>
+        Don't learn backend development just to finish a course. Learn the engineering
+        skills modern companies expect — from Node.js and NestJS to PostgreSQL, Redis,
+        Kafka, microservices, testing, Docker, AWS and system design.
+      </p>
+      <div class="actions">
+        <a class="btn-primary" href="#courses">Explore Program</a>
+        <a class="btn-secondary" href="#apply">Book Free Counselling</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>What Makes Techs Academy Different?</h3>
+      <p>
+        We connect every major topic with a real engineering problem, a practical
+        implementation and interview-level discussion.
+      </p>
+      <div class="quick">
+        <div><strong>Learn</strong><span>Engineering concepts</span></div>
+        <div><strong>Build</strong><span>Production-style systems</span></div>
+        <div><strong>Test</strong><span>Real backend scenarios</span></div>
+        <div><strong>Prepare</strong><span>Interview & career</span></div>
+      </div>
+      <div class="badge">Train for the role — not just the technology</div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="dark2">
+  <div class="container">
+    <div class="header">
+      <div class="label">Courses</div>
+      <h2 class="section-title">Learn What Companies Expect From Backend Engineers</h2>
+      <p class="section-sub">
+        Our core program is designed around modern backend engineering requirements.
+        Individual technology-focused modules can be added as specialized courses later.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card course-featured">
+        <span class="featured">CORE PROGRAM</span>
+        <div class="course-icon">⚙️</div>
+        <h3>Production Backend Engineering</h3>
+        <p>
+          A structured backend program covering Node.js, TypeScript, NestJS, PostgreSQL,
+          Redis, API engineering, testing, messaging, microservices, Docker, AWS and system design.
+        </p>
+        <span class="badge">Core Program · 1:1 Mentoring</span>
+      </article>
+
+      <article class="card">
+        <div class="course-icon">🚀</div>
+        <h3>Advanced Backend Engineering</h3>
+        <p>
+          Deep-dive topics such as Kafka, RabbitMQ, distributed systems, idempotency,
+          retries, DLQ, rate limiting, caching and production architecture.
+        </p>
+        <span class="badge">Advanced Track</span>
+      </article>
+
+      <article class="card">
+        <div class="course-icon">🎯</div>
+        <h3>Interview & Career Preparation</h3>
+        <p>
+          Backend interview practice, system-design discussions, project explanation,
+          resume review, mock interviews and career guidance.
+        </p>
+        <span class="badge">Career Add-on</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <div class="container">
+    <div class="header">
+      <div class="label">Company-Oriented Curriculum</div>
+      <h2 class="section-title">From Coding Fundamentals To Production Systems</h2>
+      <p class="section-sub">
+        The goal is to understand how real backend systems are designed, developed,
+        secured, tested, scaled and deployed — not just how to write CRUD APIs.
+      </p>
+    </div>
+
+    <div class="curriculum">
+      <article class="module">
+        <div class="module-number">MODULE 01</div>
+        <h3>JavaScript & TypeScript for Backend</h3>
+        <ul>
+          <li>Async programming, Promises & async/await</li>
+          <li>Event loop and concurrency model</li>
+          <li>Closures, prototypes and execution context</li>
+          <li>TypeScript types, generics and utility types</li>
+          <li>Error handling and clean code practices</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 02</div>
+        <h3>Node.js — Under The Hood</h3>
+        <ul>
+          <li>Node.js runtime and event-driven architecture</li>
+          <li>Event loop, streams and buffers</li>
+          <li>HTTP and API fundamentals</li>
+          <li>Worker threads and process concepts</li>
+          <li>Graceful shutdown, logging and configuration</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 03</div>
+        <h3>NestJS — Production Architecture</h3>
+        <ul>
+          <li>Modules, controllers, providers & DI</li>
+          <li>Pipes, guards, interceptors & filters</li>
+          <li>Authentication, authorization & RBAC</li>
+          <li>Validation, configuration and API versioning</li>
+          <li>Swagger, testing and production project structure</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 04</div>
+        <h3>PostgreSQL — Database Engineering</h3>
+        <ul>
+          <li>Schema design and relationships</li>
+          <li>Transactions and ACID</li>
+          <li>Indexes, B-Tree and composite indexes</li>
+          <li>Query optimization with EXPLAIN</li>
+          <li>Locks, isolation levels and connection pooling</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 05</div>
+        <h3>Redis — Performance & Distributed Patterns</h3>
+        <ul>
+          <li>Cache-aside and caching strategies</li>
+          <li>TTL, atomic operations and Lua scripts</li>
+          <li>Rate limiting and distributed locking</li>
+          <li>Pub/Sub and practical Redis patterns</li>
+          <li>Queues with BullMQ</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 06</div>
+        <h3>API Engineering & Security</h3>
+        <ul>
+          <li>REST API design and pagination</li>
+          <li>JWT, refresh tokens and RBAC</li>
+          <li>Idempotency and duplicate request handling</li>
+          <li>Rate limiting and API security</li>
+          <li>Retries, backoff and failure handling</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 07</div>
+        <h3>Kafka, RabbitMQ & Event-Driven Systems</h3>
+        <ul>
+          <li>Topics, partitions, offsets and consumer groups</li>
+          <li>Producer/consumer architecture</li>
+          <li>Retries, DLQ and idempotent consumers</li>
+          <li>RabbitMQ queues and message patterns</li>
+          <li>When to use Kafka, RabbitMQ or Redis queues</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 08</div>
+        <h3>Microservices & Distributed Systems</h3>
+        <ul>
+          <li>Monolith vs microservices</li>
+          <li>Service boundaries and communication</li>
+          <li>API Gateway and event-driven architecture</li>
+          <li>Saga and distributed transaction concepts</li>
+          <li>Outbox, consistency and failure scenarios</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 09</div>
+        <h3>Testing Production Backends</h3>
+        <ul>
+          <li>Unit and integration testing</li>
+          <li>API and E2E testing</li>
+          <li>Jest and Supertest</li>
+          <li>Mocking and test database strategy</li>
+          <li>Testing failure paths and edge cases</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 10</div>
+        <h3>Docker, CI/CD & Cloud</h3>
+        <ul>
+          <li>Dockerfiles and multi-stage builds</li>
+          <li>Docker Compose, networks and volumes</li>
+          <li>Nginx and reverse proxy concepts</li>
+          <li>CI/CD fundamentals</li>
+          <li>AWS fundamentals: EC2, RDS, S3, IAM & CloudWatch</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 11</div>
+        <h3>System Design</h3>
+        <ul>
+          <li>HLD and LLD fundamentals</li>
+          <li>Load balancing and horizontal scaling</li>
+          <li>Caching and database scaling</li>
+          <li>Read replicas, sharding and consistency</li>
+          <li>CAP theorem and distributed-system trade-offs</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 12</div>
+        <h3>Production Capstone Project</h3>
+        <ul>
+          <li>Design a multi-service backend</li>
+          <li>Authentication and authorization</li>
+          <li>PostgreSQL + Redis</li>
+          <li>Kafka / queue-based communication</li>
+          <li>Docker, testing, monitoring and deployment</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes" class="dark2">
+  <div class="container">
+    <div class="header">
+      <div class="label">Our Difference</div>
+      <h2 class="section-title">Learn → Build → Debug → Explain</h2>
+      <p class="section-sub">
+        Every important concept should move beyond theory. Students learn the concept,
+        implement it, debug real failure scenarios and learn how to explain the design in interviews.
+      </p>
+    </div>
+
+    <div class="outcomes">
+      <div class="outcome"><div class="check">✓</div><div><h3>Production-Style APIs</h3><p>Build APIs with authentication, validation, error handling, pagination, security and versioning.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Database Optimization</h3><p>Go beyond CRUD with indexes, query plans, transactions, locks and performance analysis.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Distributed Systems</h3><p>Understand queues, Kafka, retries, DLQ, idempotency and service communication.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Microservices</h3><p>Learn how to split services, handle failures and design reliable communication.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Testing & Quality</h3><p>Write unit, integration, API and E2E tests and test failure paths.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Cloud & Deployment</h3><p>Containerize applications and understand CI/CD, Nginx and core AWS services.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>System Design Thinking</h3><p>Learn to reason about scale, availability, consistency, caching and bottlenecks.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Interview Confidence</h3><p>Practice explaining why a design was chosen, what can fail and how to improve it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="header">
+      <div class="label">How We Teach</div>
+      <h2 class="section-title">Not Just Watch. Actually Build.</h2>
+    </div>
+    <div class="process">
+      <div class="step"><div class="step-num">1</div><h3>Learn</h3><p>Understand the concept, architecture and the reason behind the technology.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Build</h3><p>Implement the concept in a practical backend project.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Debug</h3><p>Work through failures, bottlenecks, duplicate requests and production scenarios.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Explain</h3><p>Learn to communicate your decisions in technical interviews and system-design discussions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark2">
+  <div class="container">
+    <div class="header">
+      <div class="label">Real Engineering Projects</div>
+      <h2 class="section-title">Build Systems You Can Actually Discuss In Interviews</h2>
+      <p class="section-sub">Projects should demonstrate engineering ability, not just frontend screens or basic CRUD.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="course-icon">🔗</div><h3>URL Shortener</h3><p>REST APIs, PostgreSQL, Redis caching, rate limiting and idempotency.</p></article>
+      <article class="card"><div class="course-icon">🔔</div><h3>Notification System</h3><p>Queues, BullMQ, Redis, retries and reliable background processing.</p></article>
+      <article class="card"><div class="course-icon">💳</div><h3>Payment Workflow</h3><p>Idempotency, retries, failure handling, transaction boundaries and DLQ concepts.</p></article>
+      <article class="card"><div class="course-icon">📦</div><h3>Kafka Microservices</h3><p>Order, Payment and Inventory services with events and consumer failure scenarios.</p></article>
+      <article class="card"><div class="course-icon">⚡</div><h3>Rate Limiter</h3><p>Redis, Lua scripts, token bucket and distributed request control.</p></article>
+      <article class="card"><div class="course-icon">🏗️</div><h3>Production Capstone</h3><p>Combine APIs, databases, cache, messaging, testing, Docker and deployment into one system.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="mentor">
+  <div class="container mentor">
+    <div class="mentor-box">
+      <div class="avatar">A</div>
+      <h3>Aditya Narayan Gaur</h3>
+      <p>Backend Engineer · Mentor · Founder, Techs Academy</p>
+    </div>
+    <div class="mentor-text">
+      <div class="label">Why Techs Academy</div>
+      <h2 class="section-title">Learn From Real Backend Engineering Experience.</h2>
+      <p>
+        Techs Academy is built around practical backend engineering rather than only
+        following a predefined tutorial path. The focus is on understanding how systems
+        behave in real development environments.
+      </p>
+      <p>
+        Students are exposed to the same categories of problems backend engineers face:
+        API design, database performance, caching, queues, distributed failures,
+        testing, deployment and system design.
+      </p>
+      <div class="pills">
+        <span class="pill">Node.js</span><span class="pill">TypeScript</span>
+        <span class="pill">NestJS</span><span class="pill">PostgreSQL</span>
+        <span class="pill">Redis</span><span class="pill">Kafka</span>
+        <span class="pill">Microservices</span><span class="pill">Docker</span>
+        <span class="pill">AWS</span><span class="pill">System Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq">
+    <div class="header">
+      <div class="label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-item">
+      <h3>Is this a beginner course?</h3>
+      <p>The program can start from fundamentals, but its destination is production-oriented backend engineering. The depth increases toward APIs, databases, distributed systems, testing, cloud and system design.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I only learn Node.js and NestJS?</h3>
+      <p>No. Node.js and NestJS are core technologies, but the program also covers databases, Redis, APIs, security, messaging, microservices, testing, Docker, AWS and system design.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the curriculum based on company requirements?</h3>
+      <p>The curriculum is intentionally organized around skills commonly expected from modern backend engineering roles, with practical implementation and interview-oriented discussions.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Will I get a job after completing the program?</h3>
+      <p>No course can guarantee a job. We focus on job-oriented skills, projects, resume support, mock interviews and career guidance to improve your readiness for real hiring processes.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are the sessions 1:1?</h3>
+      <p>The current offering is designed around personalized 1:1 mentoring, with online sessions pan-India and an offline option in Rishikesh.</p>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="cta">
+  <div class="container">
+    <div class="label">Start Here</div>
+    <h2>Build The Skills Companies Look For.</h2>
+    <p>
+      Tell us your current experience and target role. We'll help you understand
+      which backend learning path fits your current level.
+    </p>
+
+    <form
+      class="w3-form"
+      data-form-name="Student Counselling"
+      data-form-subject="New Student Counselling Request - Techs Academy"
+      data-success-message="Thank you! Your counselling request has been submitted. We will contact you soon."
+      novalidate
+    >
+      <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5">
+      <input type="hidden" name="from_name" value="Techs Academy Website">
+      <input type="hidden" name="botcheck" value="">
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="student-name">Name *</label>
+          <input id="student-name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="student-phone">Phone *</label>
+          <input id="student-phone" name="phone" type="tel" required minlength="7" maxlength="20" autocomplete="tel" placeholder="+91 98765 43210">
+        </div>
+
+        <div class="field">
+          <label for="student-email">Email *</label>
+          <input id="student-email" name="email" type="email" required maxlength="120" autocomplete="email" placeholder="you@email.com">
+        </div>
+
+        <div class="field">
+          <label for="student-level">Current Level *</label>
+          <select id="student-level" name="level" required>
+            <option value="" disabled selected>Select</option>
+            <option>Student / Fresher</option>
+            <option>0–1 Year Experience</option>
+            <option>1–3 Years Experience</option>
+            <option>3+ Years Experience</option>
+            <option>Career Switcher</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="student-target-role">Target Role</label>
+          <select id="student-target-role" name="target_role">
+            <option value="">Select target role</option>
+            <option>Backend Developer</option>
+            <option>Node.js Developer</option>
+            <option>NestJS Developer</option>
+            <option>Full Stack Developer</option>
+            <option>Software Engineer</option>
+            <option>Not Sure — Need Guidance</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="student-message">Your Goal</label>
+          <textarea id="student-message" name="message" maxlength="2000" minlength="10" placeholder="Tell us your current skills, experience and the kind of company/role you are targeting..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn-primary submit" type="submit">Book Free Counselling →</button>
+      <div class="note">We respond within 24 hours · No spam · No commitment</div>
+    </form>
+  </div>
+</section>
+<footer>
+  <p>© 2026 <span>Techs Academy</span> · Rishikesh, Uttarakhand · MSME Registered</p>
+  <p style="margin-top:5px">Train. Place. Build.</p>
+</footer>
+
+<script src="forms.js" defer></script>
+</body>
+</html>
