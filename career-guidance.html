@@ -10,14 +10,41 @@
 <meta property="og:title" content="Career Guidance & Resume Optimization | Techs Academy">
 <meta property="og:description" content="Career guidance, skill-gap analysis, resume optimization and technology career mentoring.">
 <meta property="og:url" content="https://techsacademy.in/career-guidance.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VK9NSCNJB3"></script>
 <style>
-:root{--bg:#080b10;--bg2:#0d1219;--card:#111821;--line:#26313d;--text:#f5f7fa;--muted:#9aa8b6;--a:#ffb84d;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+ :root{
+      --dark:#0f0f1a;
+      --dark2:#1a1a2e;
+      --dark3:#16213e;
+      --warm:#E8A87C;
+      --warm2:#d4915f;
+      --teal:#2EC4B6;
+      --white:#FFFFFF;
+      --gray:#94a3b8;
+      --light:#f8f9fa;
+      --card:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.08);
+      --border2:rgba(255,255,255,0.15);
+      --bg:#080b10;--bg2:#0d1219;--card:#111821;--line:#26313d;--text:#f5f7fa;--muted:#9aa8b6;--a:#ffb84d;--max:1160px
+    }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
 a{color:inherit}.container{width:min(var(--max),92%);margin:auto}
-nav{position:sticky;top:0;z-index:10;background:#080b10ee;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+/* nav{position:sticky;top:0;z-index:10;background:#080b10ee;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
 .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}.logo{text-decoration:none;font-size:22px;font-weight:800}.logo span{color:var(--a)}
 .links{display:flex;gap:24px;list-style:none;margin:0;padding:0}.links a{text-decoration:none;color:#cbd5df;font-size:14px}
-.cta{border:1px solid #806137;border-radius:9px;padding:9px 13px;color:#ffd27a;text-decoration:none;font-size:14px}
+.cta{border:1px solid #806137;border-radius:9px;padding:9px 13px;color:#ffd27a;text-decoration:none;font-size:14px} */
+  nav{position:fixed;top:0;left:0;right:0;background:rgba(15,15,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;z-index:999}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+    .nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
+    .nav-logo-text span{color:var(--warm)}
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+    .nav-links a:hover{color:var(--warm)}
+    .nav-cta{background:var(--warm);color:var(--dark);padding:10px 22px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.2s}
+    .nav-cta:hover{background:var(--warm2);transform:translateY(-1px)}
 .hero{padding:95px 0 82px;background:radial-gradient(circle at 82% 18%,#ffb84d1c,transparent 34%),linear-gradient(#0b1016,#080b10)}
 .eyebrow,.label{color:var(--a);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
 h1{max-width:900px;margin:15px 0 22px;font-size:clamp(42px,6vw,76px);line-height:1.02;letter-spacing:-3px}h1 em{color:var(--a);font-style:normal}
@@ -39,11 +66,19 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology education, career guidance, resume optimization and technical career mentoring.","areaServed":"IN"}</script>
 </head>
 <body>
-<nav><div class="container nav">
-<a class="logo" href="index.html">Techs<span> Academy</span></a>
-<ul class="links"><li><a href="student.html">Students</a></li><li><a href="companies.html">Companies</a></li><li><a href="#services">Services</a></li><li><a href="#resume">Resume</a></li><li><a href="#contact">Contact</a></li></ul>
-<a class="cta" href="#contact">Book Guidance</a>
-</div></nav>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
+    <span class="nav-logo-text">Techs<span> Academy</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="companies.html">For Companies</a></li>
+    <li><a href="career-guidance.html">Career-Guidence</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+<a class="nav-cta" href="#contact">Book Guidance</a>
+</nav>
 
 <section class="hero"><div class="container">
 <div class="eyebrow">Career Guidance · Resume · Mentoring</div>
