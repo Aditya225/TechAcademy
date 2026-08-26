@@ -66,6 +66,10 @@ section{padding:82px 0}.dark{background:var(--bg2);border-block:1px solid var(--
 input,select,textarea{width:100%;padding:12px 13px;border-radius:9px;border:1px solid #303b47;background:#0b1016;color:#fff;font:inherit}textarea{min-height:135px}
 footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{text-decoration:none}
 @media(max-width:900px){.links{display:none}.grid,.services,.school,.split{grid-template-columns:1fr 1fr}}@media(max-width:650px){.grid,.services,.school,.split,.form{grid-template-columns:1fr}.full{grid-column:auto}h1{letter-spacing:-2px}.cta{display:none}}
+
+    .form-status{font-family:Inter,sans-serif}
+    .w3-form button:disabled{opacity:.65;cursor:not-allowed}
+    .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology education, career guidance, resume optimization and technical career mentoring.","areaServed":"IN"}</script>
 </head>
@@ -131,16 +135,68 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section class="dark"><div class="container"><div class="banner"><div class="label">Career Exploration</div><h2>Build A Career Assessment — Not A Career Verdict.</h2><p>Techs Academy can use a structured assessment to help students explore interests, strengths and possible career directions. The result is a starting point for discussion, not a definitive prediction of someone's future.</p><a class="btn primary" href="#contact">Ask About Career Assessment →</a></div></div></section>
 
 <section id="contact"><div class="container"><div class="head"><div class="label">Start With A Conversation</div><h2>Tell Us Where You Are In Your Career Journey.</h2><p>Whether you are a Class 11 student, college student, fresher or working professional, tell us what you are trying to figure out.</p></div>
-<form name="career-guidance" method="POST" data-netlify="true" netlify-honeypot="career-bot">
-<input type="hidden" name="form-name" value="career-guidance"><input type="hidden" name="career-bot">
-<div class="form">
-<div class="field"><label>Name *</label><input name="name" required placeholder="Your name"></div>
-<div class="field"><label>Email *</label><input name="email" type="email" required placeholder="you@example.com"></div>
-<div class="field"><label>Current Stage *</label><select name="stage" required><option value="">Select one</option><option>Class 9–10</option><option>Class 11–12</option><option>College Student</option><option>Fresher / Job Seeker</option><option>Working Professional</option><option>Parent / School Representative</option></select></div>
-<div class="field"><label>What Do You Need?</label><select name="service"><option>Career Guidance</option><option>Skill-Gap Analysis</option><option>Career Roadmap</option><option>Resume Optimization</option><option>Interview / Job Preparation</option><option>School Career Program</option><option>Career Assessment</option></select></div>
-<div class="field full"><label>Your Goal / Question *</label><textarea name="goal" required placeholder="Tell us what you want help with..."></textarea></div>
-</div><button class="btn primary" type="submit" style="margin-top:18px">Request A Guidance Session →</button>
-</form></div></section>
+<form
+      class="w3-form"
+      data-form-name="Career Guidance"
+      data-form-subject="New Career Guidance Request - Techs Academy"
+      data-success-message="Thank you! Your guidance request has been submitted. We will contact you soon."
+      novalidate
+    >
+      <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5">
+      <input type="hidden" name="from_name" value="Techs Academy Website">
+      <input type="hidden" name="botcheck" value="">
+
+      <div class="form">
+        <div class="field">
+          <label for="career-name">Name *</label>
+          <input id="career-name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="career-email">Email *</label>
+          <input id="career-email" name="email" type="email" required maxlength="120" autocomplete="email" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label for="career-phone">Phone</label>
+          <input id="career-phone" name="phone" type="tel" minlength="7" maxlength="20" autocomplete="tel" placeholder="+91 98765 43210">
+        </div>
+
+        <div class="field">
+          <label for="career-stage">Current Stage *</label>
+          <select id="career-stage" name="stage" required>
+            <option value="">Select one</option>
+            <option>Class 9–10</option>
+            <option>Class 11–12</option>
+            <option>College Student</option>
+            <option>Fresher / Job Seeker</option>
+            <option>Working Professional</option>
+            <option>Parent / School Representative</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="career-service">What Do You Need?</label>
+          <select id="career-service" name="service">
+            <option>Career Guidance</option>
+            <option>Skill-Gap Analysis</option>
+            <option>Career Roadmap</option>
+            <option>Resume Optimization</option>
+            <option>Interview / Job Preparation</option>
+            <option>School Career Program</option>
+            <option>Career Assessment</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="career-goal">Your Goal / Question *</label>
+          <textarea id="career-goal" name="goal" required minlength="10" maxlength="2000" placeholder="Tell us what you want help with..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn primary" type="submit" style="margin-top:18px">Request A Guidance Session →</button>
+    </form></div></section>
 
 <footer><div class="container foot"><div>© 2026 <strong style="color:#fff">Techs Academy</strong> · Career Guidance & Technology Education</div><div><a href="index.html">Home</a> · <a href="student.html">Students</a> · <a href="companies.html">Companies</a></div></div></footer>
+<script src="forms.js" defer></script>
 </body></html>
