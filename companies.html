@@ -69,6 +69,10 @@ form{margin-top:25px}.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.
 input,select,textarea{width:100%;padding:12px 13px;border-radius:9px;border:1px solid #303b47;background:#0b1016;color:#fff;font:inherit}textarea{min-height:130px}
 footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:850px){.links{display:none}.grid,.process,.split{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}h1{letter-spacing:-2px}}
+
+    .form-status{font-family:Inter,sans-serif}
+    .w3-form button:disabled{opacity:.65;cursor:not-allowed}
+    .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology training, technical talent sourcing and backend development services.","areaServed":"IN"}
@@ -138,19 +142,68 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <section><div class="container"><div class="banner"><div class="label">A Better Hiring Conversation</div><h2>Have A Backend Hiring Requirement?</h2><p>Tell us what you are building and what kind of engineer you need. We'll use that information to understand the role before discussing candidates.</p><a class="btn primary" href="#contact">Start A Hiring Conversation →</a></div></div></section>
 
 <section class="dark" id="contact"><div class="container"><div class="head"><div class="label">For Companies</div><h2>Share Your Hiring Requirement</h2><p>Tell us about the role, experience level, technical stack and number of positions.</p></div>
-<form name="company-hiring" method="POST" data-netlify="true" netlify-honeypot="company-bot">
-<input type="hidden" name="form-name" value="company-hiring"><input type="hidden" name="company-bot">
-<div class="form">
-<div class="field"><label>Company Name *</label><input name="company" required placeholder="Your company"></div>
-<div class="field"><label>Contact Person *</label><input name="contact_name" required placeholder="Your name"></div>
-<div class="field"><label>Work Email *</label><input name="email" type="email" required placeholder="name@company.com"></div>
-<div class="field"><label>Phone</label><input name="phone" type="tel" placeholder="+91"></div>
-<div class="field"><label>Role *</label><input name="role" required placeholder="e.g. Backend Developer"></div>
-<div class="field"><label>Experience</label><select name="experience"><option>Fresher / Junior</option><option>1–3 Years</option><option>3–5 Years</option><option>5+ Years</option><option>Multiple Levels</option></select></div>
-<div class="field full"><label>Required Technical Stack</label><input name="stack" placeholder="Node.js, NestJS, PostgreSQL, Redis, AWS..."></div>
-<div class="field full"><label>Hiring Requirement *</label><textarea name="message" required placeholder="Number of openings, location/remote setup, must-have skills and hiring timeline..."></textarea></div>
-</div><button class="btn primary" type="submit" style="margin-top:18px">Submit Hiring Requirement →</button>
-</form></div></section>
+<form
+      class="w3-form"
+      data-form-name="Company Hiring"
+      data-form-subject="New Company Hiring Requirement - Techs Academy"
+      data-success-message="Thank you! Your hiring requirement has been received. We will contact you soon."
+      novalidate
+    >
+      <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5">
+      <input type="hidden" name="from_name" value="Techs Academy Website">
+      <input type="hidden" name="botcheck" value="">
+
+      <div class="form">
+        <div class="field">
+          <label for="company-name">Company Name *</label>
+          <input id="company-name" name="company" type="text" required minlength="2" maxlength="120" placeholder="Your company">
+        </div>
+
+        <div class="field">
+          <label for="contact-name">Contact Person *</label>
+          <input id="contact-name" name="contact_name" type="text" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="company-email">Work Email *</label>
+          <input id="company-email" name="email" type="email" required maxlength="120" autocomplete="email" placeholder="name@company.com">
+        </div>
+
+        <div class="field">
+          <label for="company-phone">Phone</label>
+          <input id="company-phone" name="phone" type="tel" minlength="7" maxlength="20" autocomplete="tel" placeholder="+91 98765 43210">
+        </div>
+
+        <div class="field">
+          <label for="company-role">Role *</label>
+          <input id="company-role" name="role" type="text" required minlength="2" maxlength="120" placeholder="e.g. Backend Developer">
+        </div>
+
+        <div class="field">
+          <label for="company-experience">Experience</label>
+          <select id="company-experience" name="experience">
+            <option>Fresher / Junior</option>
+            <option>1–3 Years</option>
+            <option>3–5 Years</option>
+            <option>5+ Years</option>
+            <option>Multiple Levels</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="company-stack">Required Technical Stack</label>
+          <input id="company-stack" name="stack" type="text" maxlength="500" placeholder="Node.js, NestJS, PostgreSQL, Redis, AWS...">
+        </div>
+
+        <div class="field full">
+          <label for="company-message">Hiring Requirement *</label>
+          <textarea id="company-message" name="message" required minlength="10" maxlength="3000" placeholder="Number of openings, location/remote setup, must-have skills and hiring timeline..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn primary" type="submit" style="margin-top:18px">Submit Hiring Requirement →</button>
+    </form></div></section>
 
 <footer><div class="container foot"><div>© 2026 <strong style="color:#fff">Techs Academy</strong> · Technical Training & Talent Solutions</div><div><a href="index.html">Home</a> · <a href="student.html">Students</a> · <a href="#contact">Companies</a></div></div></footer>
+<script src="forms.js" defer></script>
 </body></html>
