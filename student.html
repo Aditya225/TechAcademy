@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backend Development Training | Techs Academy</title>
+  <meta name="description" content="Learn backend development with Node.js, NestJS, PostgreSQL, Redis and Docker through practical, job-focused training at Techs Academy." />
+  <meta name="keywords" content="backend development course, Node.js course, NestJS training, backend training Rishikesh, backend development training India" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK9NSCNJB3"></script>
+  <style>
+   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --dark:#0f0f1a;
+      --dark2:#1a1a2e;
+      --dark3:#16213e;
+      --warm:#E8A87C;
+      --warm2:#d4915f;
+      --teal:#2EC4B6;
+      --white:#FFFFFF;
+      --gray:#94a3b8;
+      --light:#f8f9fa;
+      --card:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.08);
+      --border2:rgba(255,255,255,0.15);
+    }
+
+
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,sans-serif;background:var(--dark);color:var(--white);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:auto}
+    /* nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,26,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 32px}
+    .nav-inner{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:"Playfair Display",serif;font-size:22px;font-weight:700}.logo span{color:var(--warm)}
+    .links{display:flex;gap:25px;list-style:none;font-size:14px;color:rgba(255,255,255,.72)}
+    .links a:hover{color:var(--warm)} */
+    nav{position:fixed;top:0;left:0;right:0;background:rgba(15,15,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;z-index:999}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+    .nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
+    .nav-logo-text span{color:var(--warm)}
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+    .nav-links a:hover{color:var(--warm)}
+    .nav-cta{background:var(--warm);color:var(--dark);padding:10px 22px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.2s}
+    .nav-cta:hover{background:var(--warm2);transform:translateY(-1px)}
+
+    .nav-btn,.btn-primary{background:var(--warm);color:var(--dark);padding:11px 21px;border-radius:50px;font-size:14px;font-weight:800}
+    .nav-btn:hover,.btn-primary:hover{background:var(--warm2)}
+    .nav-links a.active {
+        color: var(--warm) !important;
+        font-weight: 700;
+      }
+    .hero{padding:150px 25px 85px;background:
+      radial-gradient(circle at 15% 30%,rgba(232,168,124,.11),transparent 35%),
+      radial-gradient(circle at 85% 20%,rgba(46,196,182,.08),transparent 30%),var(--dark)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}
+    .tag{display:inline-block;color:var(--warm);background:rgba(232,168,124,.1);border:1px solid rgba(232,168,124,.25);padding:7px 15px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:.4px;margin-bottom:20px}
+    h1,h2,h3{font-family:"Playfair Display",serif}
+    h1{font-size:54px;line-height:1.12;margin-bottom:20px}
+    h1 em{color:var(--warm);font-style:normal}
+    .hero p{font-size:17px;color:var(--gray);max-width:650px;margin-bottom:28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-secondary{border:1px solid rgba(255,255,255,.18);padding:11px 21px;border-radius:50px;font-weight:700;font-size:14px}
+    .btn-secondary:hover{border-color:var(--warm);color:var(--warm)}
+    .hero-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:28px}
+    .hero-card h3{font-size:25px;margin-bottom:8px}.hero-card>p{font-size:13px;margin-bottom:20px}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .quick div{padding:13px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.025)}
+    .quick strong{display:block;color:var(--warm);font-size:17px}.quick span{font-size:11px;color:var(--gray)}
+    section{padding:85px 25px}
+    .dark2{background:var(--dark2)}
+    .label{color:var(--warm);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+    .section-title{font-size:38px;line-height:1.2;margin-bottom:13px}
+    .section-sub{color:var(--gray);max-width:680px;font-size:15px}
+    .header{margin-bottom:42px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:25px;transition:.25s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(232,168,124,.35)}
+    .course-icon{font-size:32px;margin-bottom:14px}
+    .card h3{font-size:22px;margin-bottom:8px}.card p{font-size:13px;color:var(--gray)}
+    .badge{display:inline-block;margin-top:15px;padding:5px 11px;border-radius:50px;background:rgba(232,168,124,.1);border:1px solid rgba(232,168,124,.2);color:var(--warm);font-size:11px;font-weight:700}
+    .course-featured{border-color:rgba(232,168,124,.4);position:relative}
+    .featured{position:absolute;top:16px;right:16px;color:var(--dark);background:var(--warm);padding:5px 9px;border-radius:50px;font-size:9px;font-weight:800}
+    .curriculum{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .module{background:var(--card);border:1px solid var(--border);border-radius:17px;padding:22px}
+    .module-number{color:var(--warm);font-weight:800;font-size:12px;letter-spacing:1px}
+    .module h3{font-size:19px;margin:8px 0 12px}
+    .module ul{list-style:none}.module li{font-size:13px;color:var(--gray);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .module li:last-child{border:0}.module li:before{content:"✓";color:var(--teal);font-weight:800;margin-right:8px}
+    .outcomes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .outcome{display:flex;gap:13px;padding:18px;border:1px solid var(--border);background:var(--card);border-radius:15px}
+    .check{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(46,196,182,.12);color:var(--teal);flex:none}
+    .outcome h3{font-family:Inter,sans-serif;font-size:14px;margin-bottom:3px}.outcome p{font-size:12px;color:var(--gray)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step{text-align:center;padding:24px 14px}
+    .step-num{width:45px;height:45px;border:2px solid var(--warm);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--warm);font-weight:800;margin:0 auto 14px}
+    .step h3{font-size:18px;margin-bottom:6px}.step p{font-size:12px;color:var(--gray)}
+    .mentor{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}
+    .mentor-box{background:linear-gradient(145deg,rgba(232,168,124,.1),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:24px;padding:35px;text-align:center}
+    .avatar{width:110px;height:110px;border-radius:50%;margin:auto auto 16px;background:var(--dark3);border:2px solid var(--warm);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:42px;color:var(--warm)}
+    .mentor-box h3{font-size:25px}.mentor-box p{color:var(--gray);font-size:13px}
+    .mentor-text p{color:var(--gray);font-size:15px;margin:14px 0}
+    .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{padding:6px 12px;border-radius:50px;background:rgba(232,168,124,.08);color:var(--warm);border:1px solid rgba(232,168,124,.18);font-size:11px;font-weight:700}
+    .faq{max-width:800px}.faq-item{border-bottom:1px solid var(--border);padding:19px 0}.faq-item h3{font-family:Inter,sans-serif;font-size:15px;margin-bottom:5px}.faq-item p{font-size:13px;color:var(--gray)}
+    .cta{text-align:center;background:radial-gradient(circle at 50% 0,rgba(232,168,124,.13),transparent 45%),var(--dark2)}
+    .cta h2{font-size:42px;margin-bottom:12px}.cta p{color:var(--gray);max-width:600px;margin:0 auto 25px}
+    form{max-width:760px;margin:30px auto 0;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:25px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}
+    label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;color:rgba(255,255,255,.7)}
+    input,select,textarea{width:100%;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;padding:12px;font:14px Inter;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--warm)}select option{background:var(--dark2)}
+    textarea{min-height:100px;resize:vertical}.submit{border:0;cursor:pointer;margin-top:15px;width:100%;font:800 15px Inter}
+    .note{text-align:center;color:var(--gray);font-size:11px;margin-top:10px}
+    footer{padding:30px 25px;text-align:center;border-top:1px solid var(--border);color:rgba(255,255,255,.35);font-size:12px}
+    footer span{color:var(--warm)}
+    @media(max-width:800px){
+      .links{display:none}.hero-grid,.mentor{grid-template-columns:1fr;gap:35px}h1{font-size:39px}
+      .cards,.curriculum{grid-template-columns:1fr}.outcomes{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}
+      .form-grid{grid-template-columns:1fr}.full{grid-column:auto}.cta h2{font-size:32px}
+    }
+  </style>
+</head>
+
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
+    <span class="nav-logo-text">Techs<span> Academy</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="student.html" class ="active">Students</a></li>
+    <li><a href ="career-guidance.html">Career Guidance</a></li>
+    <li><a href="service.html">Services</a></li>
+    <li><a href="companies.html">For Companies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+    <a class="nav-btn" href="#apply">Book Free Counselling</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="tag">✦ Practical · 1:1 · Job-Focused</div>
+      <h1>Learn Backend Development. <em>Build Real Systems.</em></h1>
+      <p>
+        Stop learning backend only from tutorials. Learn Node.js, NestJS, PostgreSQL,
+        Redis and Docker through practical projects, code reviews, interview preparation
+        and industry-focused mentoring.
+      </p>
+      <div class="actions">
+        <a class="btn-primary" href="#courses">Explore Courses</a>
+        <a class="btn-secondary" href="#apply">Book Free Counselling</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Backend Development Program</h3>
+      <p>Our current core training program is designed around practical backend development.</p>
+      <div class="quick">
+        <div><strong>3 Months</strong><span>Core program</span></div>
+        <div><strong>1:1</strong><span>Personal mentoring</span></div>
+        <div><strong>Online</strong><span>Pan-India</span></div>
+        <div><strong>Rishikesh</strong><span>Offline option</span></div>
+      </div>
+      <div class="badge">Placement & Career Support</div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="dark2">
+  <div class="container">
+    <div class="header">
+      <div class="label">Courses</div>
+      <h2 class="section-title">Choose Your Learning Path</h2>
+      <p class="section-sub">
+        We can keep adding specialized courses here as Techs Academy grows.
+        The first and primary course is the Backend Development Program.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card course-featured">
+        <span class="featured">CORE PROGRAM</span>
+        <div class="course-icon">⚙️</div>
+        <h3>Backend Development</h3>
+        <p>
+          A practical 3-month program covering Node.js, NestJS, PostgreSQL,
+          Redis and Docker with project-based learning.
+        </p>
+        <span class="badge">3 Months · 1:1</span>
+      </article>
+
+      <article class="card">
+        <div class="course-icon">🎯</div>
+        <h3>Interview Preparation</h3>
+        <p>
+          Mock interviews, backend interview questions, resume review and
+          structured preparation for technical discussions.
+        </p>
+        <span class="badge">Add-on / Mentoring</span>
+      </article>
+
+      <article class="card">
+        <div class="course-icon">🧭</div>
+        <h3>Career Guidance</h3>
+        <p>
+          Personalized roadmap, skill-gap discussion and guidance on what to
+          learn next based on your current level and career goal.
+        </p>
+        <span class="badge">1:1 Counselling</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <div class="container">
+    <div class="header">
+      <div class="label">What You Will Learn</div>
+      <h2 class="section-title">Backend Development Curriculum</h2>
+      <p class="section-sub">
+        This curriculum is based on the current Techs Academy offering. We can
+        expand each module into detailed lessons, assignments and projects.
+      </p>
+    </div>
+
+    <div class="curriculum">
+      <article class="module">
+        <div class="module-number">MODULE 01</div>
+        <h3>Node.js & Backend Fundamentals</h3>
+        <ul>
+          <li>Node.js fundamentals</li>
+          <li>REST API development</li>
+          <li>Backend project structure</li>
+          <li>API request/response flow</li>
+          <li>Practical backend exercises</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 02</div>
+        <h3>NestJS</h3>
+        <ul>
+          <li>NestJS application architecture</li>
+          <li>Controllers & services</li>
+          <li>Modules and dependency injection</li>
+          <li>Building production-style APIs</li>
+          <li>Project-based implementation</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 03</div>
+        <h3>PostgreSQL</h3>
+        <ul>
+          <li>Relational database fundamentals</li>
+          <li>Schema and data modelling</li>
+          <li>Queries and relationships</li>
+          <li>Backend database integration</li>
+          <li>Practical database work</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 04</div>
+        <h3>Redis</h3>
+        <ul>
+          <li>Caching fundamentals</li>
+          <li>Using Redis with backend APIs</li>
+          <li>Performance-focused use cases</li>
+          <li>Practical caching patterns</li>
+          <li>When to use cache vs database</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 05</div>
+        <h3>Docker</h3>
+        <ul>
+          <li>Container fundamentals</li>
+          <li>Dockerizing backend applications</li>
+          <li>Development environments</li>
+          <li>Application + database setup</li>
+          <li>Deployment-oriented workflow</li>
+        </ul>
+      </article>
+
+      <article class="module">
+        <div class="module-number">MODULE 06</div>
+        <h3>Projects & Career Preparation</h3>
+        <ul>
+          <li>Real-world backend projects</li>
+          <li>Code reviews</li>
+          <li>Resume review</li>
+          <li>Mock interviews</li>
+          <li>Career and job strategy</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes" class="dark2">
+  <div class="container">
+    <div class="header">
+      <div class="label">After The Program</div>
+      <h2 class="section-title">What You Should Be Able To Do</h2>
+      <p class="section-sub">The goal is not simply to finish lessons. The goal is to become more confident building backend applications.</p>
+    </div>
+
+    <div class="outcomes">
+      <div class="outcome"><div class="check">✓</div><div><h3>Build REST APIs</h3><p>Create structured backend APIs using Node.js and NestJS.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Work With PostgreSQL</h3><p>Design and integrate relational data into backend applications.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Use Redis</h3><p>Understand practical caching and performance use cases.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Dockerize Applications</h3><p>Package backend applications for a consistent development and deployment workflow.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Build Projects</h3><p>Apply concepts in practical projects instead of only following tutorials.</p></div></div>
+      <div class="outcome"><div class="check">✓</div><div><h3>Prepare For Interviews</h3><p>Practice technical questions, communicate your projects and improve interview confidence.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="header">
+      <div class="label">Learning Journey</div>
+      <h2 class="section-title">From First Session To Job Preparation</h2>
+    </div>
+    <div class="process">
+      <div class="step"><div class="step-num">1</div><h3>Free Counselling</h3><p>Discuss your current skills, goals and the right learning path.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Learn</h3><p>Follow a structured backend curriculum with personal mentoring.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Build</h3><p>Work on practical projects and improve through code reviews.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Prepare</h3><p>Resume review, mock interviews and career guidance for your next step.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mentor" class="dark2">
+  <div class="container mentor">
+    <div class="mentor-box">
+      <div class="avatar">A</div>
+      <h3>Aditya Narayan Gaur</h3>
+      <p>Backend Engineer · Mentor · Founder, Techs Academy</p>
+    </div>
+    <div class="mentor-text">
+      <div class="label">Learn From Industry Experience</div>
+      <h2 class="section-title">Less Theory. More Engineering.</h2>
+      <p>
+        Techs Academy was started as a mentoring platform and focuses on helping
+        learners understand backend development through practical work.
+      </p>
+      <p>
+        The current training focuses on Node.js, NestJS, PostgreSQL, Redis and Docker,
+        with additional support around projects, resumes, mock interviews and career planning.
+      </p>
+      <div class="pills">
+        <span class="pill">Node.js</span><span class="pill">NestJS</span>
+        <span class="pill">PostgreSQL</span><span class="pill">Redis</span>
+        <span class="pill">Docker</span><span class="pill">Backend APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container faq">
+    <div class="header">
+      <div class="label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-item">
+      <h3>Who can join the backend program?</h3>
+      <p>Students, freshers and working developers who want to learn or strengthen their backend development skills can discuss their current level during counselling.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the training online?</h3>
+      <p>Yes. Online sessions are available pan-India, with an offline option in Rishikesh.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are the sessions 1:1?</h3>
+      <p>The current offering is designed around personalized 1:1 mentoring.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you guarantee a job?</h3>
+      <p>No. We provide job-focused training, resume support, mock interviews, career guidance and placement support, but hiring decisions are made by employers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the fee?</h3>
+      <p>Use the free counselling session to understand the appropriate course/path and current fee structure before enrolling.</p>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="cta">
+  <div class="container">
+    <div class="label">Start Here</div>
+    <h2>Not Sure Which Course Is Right For You?</h2>
+    <p>Tell us your current experience and career goal. We'll help you choose the right learning path before you enroll.</p>
+
+    <form name="student-counselling" method="POST" data-netlify="true" netlify-honeypot="student-bot">
+      <input type="hidden" name="form-name" value="student-counselling">
+      <input type="hidden" name="student-bot">
+      <div class="form-grid">
+        <div class="field"><label>Name *</label><input name="name" required placeholder="Your name"></div>
+        <div class="field"><label>Phone *</label><input name="phone" required type="tel" placeholder="+91 98765 43210"></div>
+        <div class="field"><label>Email *</label><input name="email" required type="email" placeholder="you@email.com"></div>
+        <div class="field">
+          <label>Current Level *</label>
+          <select name="level" required>
+            <option value="" disabled selected>Select</option>
+            <option>Student / Fresher</option>
+            <option>0–1 Year Experience</option>
+            <option>1–3 Years Experience</option>
+            <option>3+ Years Experience</option>
+            <option>Career Switcher</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>What do you want to learn?</label>
+          <select name="course">
+            <option>Backend Development</option>
+            <option>Node.js / NestJS</option>
+            <option>Interview Preparation</option>
+            <option>Career Guidance</option>
+            <option>Not Sure — Need Guidance</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Your Goal</label>
+          <textarea name="message" placeholder="Tell us about your current skills and what you want to achieve..."></textarea>
+        </div>
+      </div>
+      <button class="btn-primary submit" type="submit">Book Free Counselling →</button>
+      <div class="note">We respond within 24 hours · No spam · No commitment</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Techs Academy</span> · Rishikesh, Uttarakhand · MSME Registered</p>
+  <p style="margin-top:5px">Train. Place. Build.</p>
+</footer>
+
+</body>
+</html>
