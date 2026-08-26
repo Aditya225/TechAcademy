@@ -78,6 +78,10 @@ tr:last-child td{border-bottom:none}
 input,select,textarea{width:100%;padding:12px 13px;border-radius:9px;border:1px solid #303b47;background:#0b1016;color:#fff;font:inherit}textarea{min-height:135px}
 footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{text-decoration:none}
 @media(max-width:900px){.nav-links{display:none}.grid,.grid-4,.services,.split{grid-template-columns:1fr 1fr}}@media(max-width:650px){.grid,.grid-4,.services,.split,.form{grid-template-columns:1fr}.full{grid-column:auto}h1{letter-spacing:-2px}.nav-cta{display:none}}
+
+    .form-status{font-family:Inter,sans-serif}
+    .w3-form button:disabled{opacity:.65;cursor:not-allowed}
+    .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology education, career guidance, technical mentoring, and corporate solutions.","areaServed":"IN"}</script>
 </head>
@@ -476,21 +480,36 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       <p>Whether you need career guidance, software training, or technical services for your company, reach out to us.</p>
     </div>
     
-    <form name="services-inquiry" method="POST" data-netlify="true" netlify-honeypot="services-bot">
-      <input type="hidden" name="form-name" value="services-inquiry">
-      <input type="hidden" name="services-bot">
+    <form
+      class="w3-form"
+      data-form-name="Services Inquiry"
+      data-form-subject="New Services Enquiry - Techs Academy"
+      data-success-message="Thank you! Your service enquiry has been submitted. We will contact you soon."
+      novalidate
+    >
+      <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5">
+      <input type="hidden" name="from_name" value="Techs Academy Website">
+      <input type="hidden" name="botcheck" value="">
+
       <div class="form">
         <div class="field">
-          <label>Name *</label>
-          <input name="name" required placeholder="Your full name">
+          <label for="service-name">Name *</label>
+          <input id="service-name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" placeholder="Your full name">
         </div>
+
         <div class="field">
-          <label>Email *</label>
-          <input name="email" type="email" required placeholder="you@example.com">
+          <label for="service-email">Email *</label>
+          <input id="service-email" name="email" type="email" required maxlength="120" autocomplete="email" placeholder="you@example.com">
         </div>
+
         <div class="field">
-          <label>I am a... *</label>
-          <select name="user_type" required>
+          <label for="service-phone">Phone</label>
+          <input id="service-phone" name="phone" type="tel" minlength="7" maxlength="20" autocomplete="tel" placeholder="+91 98765 43210">
+        </div>
+
+        <div class="field">
+          <label for="service-user-type">I am a... *</label>
+          <select id="service-user-type" name="user_type" required>
             <option value="">Select Category</option>
             <option>College Student</option>
             <option>Job Seeker / Fresher</option>
@@ -499,9 +518,10 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
             <option>College / Workshop Organiser</option>
           </select>
         </div>
-        <div class="field">
-          <label>Interested Service *</label>
-          <select name="service" required>
+
+        <div class="field full">
+          <label for="service-interest">Interested Service *</label>
+          <select id="service-interest" name="service" required>
             <option value="">Select Service</option>
             <option>Career Guidance (₹999)</option>
             <option>Resume Optimization (₹799)</option>
@@ -515,11 +535,13 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
             <option>Company Engineering Solutions (Custom)</option>
           </select>
         </div>
+
         <div class="field full">
-          <label>Message / Details *</label>
-          <textarea name="message" required placeholder="Tell us about your requirements or current career stage..."></textarea>
+          <label for="service-message">Message / Details *</label>
+          <textarea id="service-message" name="message" required minlength="10" maxlength="3000" placeholder="Tell us about your requirements or current career stage..."></textarea>
         </div>
       </div>
+
       <button class="btn primary" type="submit" style="margin-top:18px">Submit Requirement →</button>
     </form>
   </div>
@@ -538,5 +560,6 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </footer>
 
+<script src="forms.js" defer></script>
 </body>
 </html>
