@@ -76,30 +76,138 @@ tr:last-child td{border-bottom:none}
 
 .form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:13px;color:#cbd3db}
 input,select,textarea{width:100%;padding:12px 13px;border-radius:9px;border:1px solid #303b47;background:#0b1016;color:#fff;font:inherit}textarea{min-height:135px}
-footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{text-decoration:none}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:28px 40px;text-align:center}
+    footer p{color:rgba(255,255,255,0.3);font-size:13px;margin-bottom:6px}
+    footer span{color:var(--warm)}
+    .footer-links{display:flex;justify-content:center;gap:18px;margin-top:10px}
+    .footer-links a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--warm)}
 @media(max-width:900px){.nav-links{display:none}.grid,.grid-4,.services,.split{grid-template-columns:1fr 1fr}}@media(max-width:650px){.grid,.grid-4,.services,.split,.form{grid-template-columns:1fr}.full{grid-column:auto}h1{letter-spacing:-2px}.nav-cta{display:none}}
 
     .form-status{font-family:Inter,sans-serif}
     .w3-form button:disabled{opacity:.65;cursor:not-allowed}
     .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
+    
+      /* Mobile Toggle Button (Hamburger) */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle active animation (Cross Icon) */
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Drawer (Default hidden) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; /* Navbar height */
+  left: 0;
+  width: 100%;
+  background: var(--dark);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+  
+  .nav-links, 
+  .nav-cta {
+    display: none !important; /* Mobile pe desktop links hide karne ke liye */
+  }
+
+  .mobile-toggle {
+    display: flex; /* Mobile screen par hamburger toggle show karein */
+  }
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology education, career guidance, technical mentoring, and corporate solutions.","areaServed":"IN"}</script>
 </head>
 <body>
 <nav>
-    <a href="index.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
     <span class="nav-logo-text">Techs<span> Academy</span></span>
   </a>
+
+  <!-- Desktop Navigation Links -->
   <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="student.html">Students</a></li>
-    <li><a href="service.html" class ="active">Services</a></li>
+    <li><a href="about.html" >About</a></li>
+    <li><a href="student.html" >Students</a></li>
+    <li><a href="career-guidance.html" >Career Guidance</a></li>
+    <li><a href="service.html" class="active">Services</a></li>
     <li><a href="companies.html">For Companies</a></li>
-    <li><a href="career-guidance.html">Career-Guidence</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="cta nav-cta" href="#contact">Get Started</a>
+
+  <a href="#book-demo" class="nav-cta">Get Started</a>
+
+  <!-- 1. Mobile Toggle Button (Hamburger Icon) -->
+  <button id="mobileMenuToggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 2. Mobile Menu Overlay/Drawer -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="about.html">About</a>
+    <a href="student.html">Students</a>
+    <a href="career-guidance.html">Career Guidance</a>
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="#contact">Contact</a>
+    <a href="#book-demo" class="mobile-nav-cta">Get Started</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -549,17 +657,18 @@ footer{padding:38px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <!-- FOOTER -->
 <footer>
-  <div class="container foot">
-    <div>© 2026 <strong style="color:#fff">Techs Academy</strong> · Technology Training & Services</div>
-    <div>
-      <a href="index.html">Home</a> · 
-      <a href="career-guidance.html">Career Guidance</a> · 
-      <a href="services.html">Services</a> · 
-      <a href="companies.html">Companies</a>
-    </div>
+  <p>© 2026 <span>Techs Academy</span> — Rishikesh, Uttarakhand · MSME Registered</p>
+  <p>Founded by <span>Aditya Narayan Gaur</span> · Backend Engineer · Mentor · Entrepreneur</p>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#for-companies">For Companies</a>
+    <a href="https://www.instagram.com/iam.gaur25/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/company/90444200" target="_blank">LinkedIn</a>
+    <a href="mailto:info@techsacademy.in">Email</a>
+    <a href="https://wa.me/919760504977" target="_blank">WhatsApp</a>
   </div>
 </footer>
-
 <script src="forms.js" defer></script>
+<script src="index.js" defer></script>
 </body>
 </html>
