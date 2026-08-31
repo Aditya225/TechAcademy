@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Courses & Technical Training | Node.js, Python, AWS, AI & Cyber Security | Techs Academy</title>
+<meta name="description" content="Explore industry-focused IT courses in Backend Development, Node.js, NestJS, Python, AWS, AI, RAG, LLM and Cyber Security at Techs Academy.">
+<meta name="author" content="Techs Academy">
+<link rel="canonical" href="https://www.techsacademy.in/courses.html">
+<meta property="og:title" content="Industry-Focused IT Courses | Techs Academy">
+<meta property="og:description" content="Learn Backend Development, AI, AWS & Cloud, and Cyber Security through practical, career-focused training.">
+<meta property="og:url" content="https://www.techsacademy.in/courses.html">
+<meta property="og:type" content="website">
+
+<style>
+:root{--gold:#d4af37;--light:#f1d77a;--bg:#090909;--card:#111;--text:#f5f5f5;--muted:#b7b7b7;--border:rgba(212,175,55,.25)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;background:rgba(15,15,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;z-index:999}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+    .nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
+    .nav-logo-text span{color:var(--warm)}
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+    .nav-links a:hover{color:var(--warm)}
+    .nav-cta{background:var(--warm);color:var(--dark);padding:10px 22px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.2s}
+    .nav-cta:hover{background:var(--warm2);transform:translateY(-1px)}
+    .cta-sm{border:1px solid #806137;border-radius:9px;padding:9px 13px;color:#ffd27a;text-decoration:none;font-size:14px}
+   .nav-links a.active {
+  color: var(--warm) !important;
+  font-weight: 700;
+}
+.hero{padding:90px 0 70px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.13),transparent 40%)}
+.eyebrow{display:inline-block;color:var(--light);border:1px solid var(--border);padding:7px 13px;border-radius:30px;font-size:13px;margin-bottom:20px}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.08;margin-bottom:22px}.gold{color:var(--light)}
+.hero p{max-width:780px;margin:auto;color:var(--muted);font-size:18px}
+.hero-actions{margin-top:30px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 21px;border-radius:8px;border:1px solid var(--gold);font-weight:700;cursor:pointer}
+.btn-primary{background:var(--gold);color:#090909}.btn-secondary{color:var(--light);background:transparent}
+section{padding:70px 0}.section-heading{text-align:center;margin-bottom:42px}
+.section-heading h2{font-size:clamp(29px,4vw,43px);margin-bottom:10px}.section-heading p{color:var(--muted);max-width:700px;margin:auto}
+.courses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.course-card{background:linear-gradient(145deg,var(--card),#161616);border:1px solid var(--border);border-radius:16px;padding:30px;position:relative;overflow:hidden}
+.course-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--gold)}
+.course-number{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:1px}.course-card h3{font-size:28px;margin:8px 0 12px}
+.course-card .intro{color:var(--muted);margin-bottom:22px}.course-card h4{color:var(--light);margin:18px 0 10px;font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}.tags li{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:#ddd;padding:6px 9px;border-radius:6px;font-size:13px}
+.projects{list-style:none;display:grid;gap:7px;color:#ddd;font-size:14px}.projects li:before{content:"✓";color:var(--gold);margin-right:8px;font-weight:800}
+.course-footer{margin-top:25px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.course-footer span{color:var(--muted);font-size:13px}
+.difference{background:#0d0d0d;border-top:1px solid rgba(212,175,55,.1);border-bottom:1px solid rgba(212,175,55,.1)}
+.difference-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.difference-card{border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:23px;background:#111}
+.difference-card .icon{color:var(--gold);font-size:25px;margin-bottom:12px}.difference-card h3{font-size:18px;margin-bottom:7px}.difference-card p{color:var(--muted);font-size:14px}
+.roadmap{max-width:850px;margin:auto;display:grid;gap:14px}.step{display:flex;gap:18px;align-items:flex-start;border:1px solid rgba(255,255,255,.09);padding:18px;border-radius:10px;background:#111}
+.step-no{min-width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#111;font-weight:800}.step h3{font-size:17px;margin-bottom:4px}.step p{color:var(--muted);font-size:14px}
+.faq{max-width:850px;margin:auto}details{background:#111;border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:17px 19px;margin-bottom:11px}
+summary{cursor:pointer;font-weight:700;color:#eee}details p{color:var(--muted);margin-top:12px;font-size:14px}
+.cta{text-align:center;background:radial-gradient(circle at center,rgba(212,175,55,.12),transparent 55%);padding-bottom:90px}
+.cta-box{border:1px solid var(--border);border-radius:18px;padding:55px 25px;background:#101010}.cta-box h2{font-size:clamp(29px,4vw,43px);margin-bottom:12px}
+.cta-box p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:28px 40px;text-align:center}
+    footer p{color:rgba(255,255,255,0.3);font-size:13px;margin-bottom:6px}
+    footer span{color:var(--warm)}
+    .footer-links{display:flex;justify-content:center;gap:18px;margin-top:10px}
+    .footer-links a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--warm)}
+@media(max-width:850px){.menu-toggle{display:block}.nav-links{position:absolute;left:0;right:0;top:72px;background:#0b0b0b;border-bottom:1px solid var(--border);display:none;flex-direction:column;align-items:stretch;padding:12px 4%}.nav-links.open{display:flex}.nav-links a{width:100%;padding:13px}.courses-grid{grid-template-columns:1fr}.difference-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hero{padding:65px 0 50px}section{padding:55px 0}.course-card{padding:23px}.difference-grid{grid-template-columns:1fr}.brand{font-size:18px}.brand-mark{width:34px;height:34px}}
+ /* Mobile Toggle Button (Hamburger) */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle active animation (Cross Icon) */
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Drawer (Default hidden) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; /* Navbar height */
+  left: 0;
+  width: 100%;
+  background: var(--dark);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+  
+  .nav-links, 
+  .nav-cta {
+    display: none !important; /* Mobile pe desktop links hide karne ke liye */
+  }
+
+  .mobile-toggle {
+    display: flex; /* Mobile screen par hamburger toggle show karein */
+  }
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Techs Academy","url":"https://techsacademy.in/","description":"Technology training, technical talent sourcing and backend development services.","areaServed":"IN"}
+</script>
+</head>
+<body>
+<!-- <nav><div class="container nav">
+<a class="logo" href="index.html">Techs<span> Academy</span></a>
+<ul class="links"><li><a href="student.html">Students</a></li><li><a href="#talent">Talent</a></li><li><a href="#process">Process</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul> -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
+    <span class="nav-logo-text">Techs<span> Academy</span></span>
+  </a>
+
+  <!-- Desktop Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="student.html">Students</a></li>
+    <li><a href="career-guidance.html">Career Guidance</a></li>
+    <li><a href="courses.html" class ="active">Courses</a></li>
+    <li><a href="service.html">Services</a></li>
+    <li><a href="companies.html">For Companies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <a href="#book-demo" class="nav-cta">Get Started</a>
+
+  <!-- 1. Mobile Toggle Button (Hamburger Icon) -->
+  <button id="mobileMenuToggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 2. Mobile Menu Overlay/Drawer -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="about.html">About</a>
+    <a href="student.html">Students</a>
+    <a href="career-guidance.html">Career Guidance</a>
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="#contact">Contact</a>
+    <a href="#book-demo" class="mobile-nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero"><div class="container">
+<span class="eyebrow">PRACTICAL • INDUSTRY-FOCUSED • CAREER-ORIENTED</span>
+<h1>Learn Skills That Go <span class="gold">Beyond Tutorials.</span></h1>
+<p>Industry-focused technical training designed to help students and aspiring developers understand real-world software engineering, cloud, AI and cyber security.</p>
+<div class="hero-actions"><a href="#courses" class="btn btn-primary">Explore Courses</a><a href="student.html#student-form" class="btn btn-secondary">Talk to Us</a></div>
+</div></header>
+
+<section id="courses"><div class="container">
+<div class="section-heading"><h2>Our <span class="gold">Training Programs</span></h2><p>Choose a learning path based on your career goal. Course modules can be customized according to learner level and practical requirements.</p></div>
+<div class="courses-grid">
+
+<article class="course-card"><div class="course-number">01 • SOFTWARE ENGINEERING</div><h3>Production Backend Engineering</h3>
+<p class="intro">Learn how modern backend applications are designed, developed, tested and prepared for production environments.</p>
+<h4>Core Technologies</h4><ul class="tags"><li>Node.js</li><li>TypeScript</li><li>NestJS</li><li>REST APIs</li><li>PostgreSQL</li><li>Redis</li><li>Kafka</li><li>RabbitMQ</li><li>Microservices</li><li>Docker</li><li>AWS</li><li>Testing</li><li>System Design</li></ul>
+<h4>Practical Projects</h4><ul class="projects"><li>Authentication & Authorization Service</li><li>URL Shortener</li><li>Notification System</li><li>Rate Limiter</li><li>Payment API</li><li>Microservices Application</li></ul>
+<div class="course-footer"><span>For students, freshers & developers</span><a class="btn btn-secondary" href="student.html#student-form" data-course="Production Backend Engineering">Enquire</a></div></article>
+
+<article class="course-card"><div class="course-number">02 • ARTIFICIAL INTELLIGENCE</div><h3>AI, RAG & LLM Engineering</h3>
+<p class="intro">Understand how modern AI applications are built using Python, LLM APIs, embeddings, retrieval and production-oriented RAG workflows.</p>
+<h4>Core Technologies</h4><ul class="tags"><li>Python</li><li>FastAPI</li><li>LLM APIs</li><li>Prompt Engineering</li><li>Embeddings</li><li>Vector Databases</li><li>RAG</li><li>Document Processing</li><li>AI Integrations</li></ul>
+<h4>Practical Projects</h4><ul class="projects"><li>AI Chat with Documents</li><li>RAG Knowledge Assistant</li><li>Document Q&A API</li><li>AI-powered Application</li></ul>
+<div class="course-footer"><span>For developers & AI learners</span><a class="btn btn-secondary" href="student.html#student-form" data-course="AI, RAG & LLM Engineering">Enquire</a></div></article>
+
+<article class="course-card"><div class="course-number">03 • CLOUD & INFRASTRUCTURE</div><h3>AWS & Cloud Engineering</h3>
+<p class="intro">Build the foundation needed to deploy, operate and understand cloud-based applications and backend infrastructure.</p>
+<h4>Core Technologies</h4><ul class="tags"><li>Linux</li><li>AWS EC2</li><li>S3</li><li>RDS</li><li>IAM</li><li>Docker</li><li>Nginx</li><li>CI/CD</li><li>CloudWatch</li><li>Deployment</li></ul>
+<h4>Practical Work</h4><ul class="projects"><li>Deploy a backend application on AWS</li><li>Database & storage configuration</li><li>Dockerized application deployment</li><li>Reverse proxy with Nginx</li><li>Basic monitoring & logs</li></ul>
+<div class="course-footer"><span>For developers & cloud beginners</span><a class="btn btn-secondary" href="student.html#student-form" data-course="AWS & Cloud Engineering">Enquire</a></div></article>
+
+<article class="course-card"><div class="course-number">04 • SECURITY</div><h3>Cyber Security & Ethical Security</h3>
+<p class="intro">Build a practical foundation in cyber security, secure application development, web security and ethical security testing under guided learning.</p>
+<h4>Core Topics</h4><ul class="tags"><li>Security Fundamentals</li><li>Networking</li><li>Linux</li><li>Web Security</li><li>OWASP</li><li>Authentication</li><li>Authorization</li><li>Secure Development</li><li>Vulnerability Assessment</li><li>Security Testing</li></ul>
+<h4>Practical Learning</h4><ul class="projects"><li>Web security labs</li><li>Secure API implementation</li><li>Authentication security exercises</li><li>Vulnerability identification labs</li><li>Security best-practice exercises</li></ul>
+<div class="course-footer"><span>Instructor-led practical training</span><a class="btn btn-secondary" href="student.html#student-form" data-course="Cyber Security & Ethical Security">Enquire</a></div></article>
+
+</div></div></section>
+
+<section class="difference"><div class="container"><div class="section-heading"><h2>Why Learn With <span class="gold">Techs Academy?</span></h2><p>Our focus is not only on finishing a syllabus. We want learners to understand how skills are used in real projects.</p></div>
+<div class="difference-grid">
+<div class="difference-card"><div class="icon">01</div><h3>Practical Projects</h3><p>Work on projects that connect individual concepts into complete applications.</p></div>
+<div class="difference-card"><div class="icon">02</div><h3>Industry-Oriented Skills</h3><p>Learn technologies and engineering concepts commonly used in modern development teams.</p></div>
+<div class="difference-card"><div class="icon">03</div><h3>Career Focus</h3><p>Get guidance around projects, resumes, interview preparation and learning priorities.</p></div>
+<div class="difference-card"><div class="icon">04</div><h3>Mentor Support</h3><p>Ask questions, understand concepts and get direction instead of learning completely alone.</p></div>
+</div></div></section>
+
+<section><div class="container"><div class="section-heading"><h2>How Your <span class="gold">Learning Journey</span> Works</h2><p>A structured approach from fundamentals to practical implementation.</p></div>
+<div class="roadmap">
+<div class="step"><div class="step-no">1</div><div><h3>Understand Your Goal</h3><p>We first understand your current skills, target role and learning requirements.</p></div></div>
+<div class="step"><div class="step-no">2</div><div><h3>Build the Fundamentals</h3><p>Strengthen the concepts required before moving into advanced tools and frameworks.</p></div></div>
+<div class="step"><div class="step-no">3</div><div><h3>Apply Through Projects</h3><p>Turn concepts into working projects and understand the engineering decisions behind them.</p></div></div>
+<div class="step"><div class="step-no">4</div><div><h3>Career Preparation</h3><p>Work on resume presentation, interview preparation and identifying your next technical skills.</p></div></div>
+</div></div></section>
+
+<section><div class="container"><div class="section-heading"><h2>Frequently Asked <span class="gold">Questions</span></h2></div>
+<div class="faq">
+<details><summary>Are these courses suitable for freshers?</summary><p>Yes. The learning path can start from fundamentals and gradually move toward projects and advanced concepts depending on your current level.</p></details>
+<details><summary>Do I need prior programming experience?</summary><p>It depends on the program. Some programs can start from fundamentals, while advanced backend, AI or cloud topics are better suited to learners who already understand programming basics.</p></details>
+<details><summary>Will I work on practical projects?</summary><p>Yes. Practical implementation is an important part of the learning approach. Projects can be selected according to the learner's level and program.</p></details>
+<details><summary>Do you provide career or resume guidance?</summary><p>Yes. Techs Academy also provides career guidance, resume optimization and interview-oriented support as separate services.</p></details>
+<details><summary>Do you provide certificates?</summary><p>Course completion documentation or certificates can be provided according to the program and applicable business requirements. A course certificate should not be represented as a government or university qualification.</p></details>
+<details><summary>Can companies request customized training?</summary><p>Yes. Companies can contact Techs Academy for customized technical workshops and training requirements.</p></details>
+</div></div></section>
+
+<section class="cta"><div class="container"><div class="cta-box">
+<h2>Not Sure Which Course Is Right <span class="gold">For You?</span></h2>
+<p>Tell us about your current skills and career goal. We can help you choose a suitable learning path before you enrol.</p>
+<a href="student.html#student-form" class="btn btn-primary" id="courseCta">Get Course Guidance</a>
+</div></div></section>
+</main>
+
+<footer>
+  <p>© 2026 <span>Techs Academy</span> — Rishikesh, Uttarakhand · MSME Registered</p>
+  <p>Founded by <span>Aditya Narayan Gaur</span> · Backend Engineer · Mentor · Entrepreneur</p>
+  <div class="footer-links">
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="https://www.instagram.com/iam.gaur25/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/company/90444200" target="_blank">LinkedIn</a>
+    <a href="mailto:techsacademy.in">Email</a>
+    <a href="https://wa.me/919760504977" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
+menuToggle.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.textContent=open?"✕":"☰";});
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="☰";}));
+document.querySelectorAll("[data-course]").forEach(button=>button.addEventListener("click",()=>{const course=button.dataset.course;if(typeof gtag==="function")gtag("event","course_interest",{course_name:course});try{localStorage.setItem("selectedCourse",course)}catch(e){}}));
+document.getElementById("courseCta").addEventListener("click",()=>{if(typeof gtag==="function")gtag("event","course_guidance_click")});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
