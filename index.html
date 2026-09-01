@@ -711,50 +711,117 @@
         <p>We have received your request. Aditya will contact you within 24 hours.</p>
         <a href="https://wa.me/919760504977?text=Hi%20Aditya%2C%20I%20just%20submitted%20a%20request%20on%20Tech%20Academy" target="_blank" class="btn-warm" style="margin-top:18px;display:inline-block">💬 Chat on WhatsApp</a>
       </div>
-      <form id="demoForm" class="w3-form" data-form-name="Demo Booking" data-form-subject="New Demo Booking - Techs Academy" data-success-action="hide" data-success-message="Thank you! Your request has been submitted. Aditya will contact you within 24 hours.">
-        <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5"/>
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"/>
-        <div class="form-grid">
-          <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Your name" minlength="2" maxlength="80" autocomplete="name" required/></div>
-          <div class="form-group"><label>Email *</label><input type="email" name="email" type="email" placeholder="you@email.com" maxlength="120" autocomplete="email" required/></div>
-          <div class="form-group"><label>Phone *</label><input type="tel" name="phone" type="tel" placeholder="+91 98765 43210" minlength="7" maxlength="20" autocomplete="tel" required/></div>
-          <div class="form-group"><label>I am a... *</label>
-            <select name="user_type" required>
-              <option value="" disabled selected>Select</option>
-              <option>Student / Individual — Want to learn</option>
-              <option>Company — Want to hire developers</option>
-              <option>Business — Want to build a product</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Service Needed *</label>
-            <select name="service" required>
-              <option value="" disabled selected>Select service</option>
-              <option>Backend Development Training</option>
-              <option>Career Counselling</option>
-              <option>Resume Review</option>
-              <option>Mock Interviews</option>
-              <option>Tech Talent Placement</option>
-              <option>Backend Development Project</option>
-              <option>AI/LLM Integration</option>
-              <option>Not Sure — Need Guidance</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Preferred Time</label>
-            <select name="preferred_time">
-              <option value="" disabled selected>Select time</option>
-              <option>Morning (9 AM – 12 PM)</option>
-              <option>Afternoon (12 PM – 4 PM)</option>
-              <option>Evening (4 PM – 8 PM)</option>
-              <option>Weekend Only</option>
-            </select>
-          </div>
-          <div class="form-group full-width"><label>Tell us about your requirement *</label>
-            <textarea name="message" rows="4" placeholder="Describe what you need — learning goals, hiring requirements, or project details..." minlength="10" maxlength="2000" required></textarea>
-          </div>
-        </div>
-        <button type="submit" class="form-submit-btn">Submit Request →</button>
-        <p class="form-note">★ We respond within 24 hours · No spam · No commitment</p>
-      </form>
+    <form
+  id="consultForm"
+  class="w3-form"
+  data-form-name="Quick Consultation"
+  data-form-subject="New Quick Consultation - Techs Academy"
+  data-success-message="Received! We will contact you within 24 hours."
+  novalidate
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5"
+  />
+
+  <input
+    type="hidden"
+    name="from_name"
+    value="Techs Academy Website"
+  />
+
+  <input
+  type="hidden"
+  name="botcheck"
+  value=""
+/>
+
+  <div class="consult-2col">
+
+    <div class="consult-form-group">
+      <label for="consult-name">Name *</label>
+      <input
+        id="consult-name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        minlength="2"
+        maxlength="80"
+        autocomplete="name"
+        required
+      />
+    </div>
+
+    <div class="consult-form-group">
+      <label for="consult-phone">Phone *</label>
+      <input
+        id="consult-phone"
+        type="tel"
+        name="phone"
+        placeholder="+91 98765 43210"
+        minlength="7"
+        maxlength="20"
+        autocomplete="tel"
+        required
+      />
+    </div>
+
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-email">Email *</label>
+    <input
+      id="consult-email"
+      type="email"
+      name="email"
+      placeholder="you@email.com"
+      maxlength="120"
+      autocomplete="email"
+      required
+    />
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-help">I need help with *</label>
+
+    <select
+      id="consult-help"
+      name="help_type"
+      required
+    >
+      <option value="" disabled selected>Select</option>
+      <option>Learning Backend Development</option>
+      <option>Hiring Backend Developers</option>
+      <option>Building a Tech Product</option>
+      <option>Career Guidance</option>
+      <option>Resume Review</option>
+      <option>Not Sure</option>
+    </select>
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-message">Message</label>
+
+    <textarea
+      id="consult-message"
+      name="message"
+      rows="3"
+      placeholder="Tell us more..."
+      minlength="10"
+      maxlength="1500"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="consult-submit"
+    id="consultSubmitBtn"
+  >
+    Send Request →
+  </button>
+
+</form>
     </div>
   </div>
 </section>
