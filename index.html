@@ -6,8 +6,12 @@
   <title>Techs Academy — Train. Place. Build. | Rishikesh</title>
   <meta name="description" content="Techs Academy is your complete tech partner — We train backend developers, place talent in top companies like Deloitte & Big 4, and build scalable backend systems. MSME Registered. Based in Rishikesh, available pan-India."/>
   <meta name="keywords" content="backend development training Rishikesh, tech placement consultancy India, NestJS developer freelance, hire backend developer India, career counselling developers, Node.js training Uttarakhand"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="assets/favicon.jpg" />
+<link rel="apple-touch-icon" href="assets/favicon.jpg" />
+
+<!-- Google Fonts & FontAwesome -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK9NSCNJB3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,8 +21,17 @@
     gtag('config', 'G-VK9NSCNJB3');
   </script>
 
-  <script>
+  <!-- <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="XrKIHk3kl1T4_Nnt2twgu";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script> -->
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Techs Academy",
+  "url": "https://techsacademy.in"
+}
 </script>
   
   <style>
@@ -42,8 +55,54 @@
 
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;background:rgba(15,15,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;z-index:999}
-    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+    /* .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px} */
+    .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Naye Round Golden Logo ke liye fixed height/width aur clean background */
+.nav-logo img.site-logo {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent; /* Purane white background aur padding ko hata diya hai */
+  padding: 0;
+  flex-shrink: 0;          /* Mobile layout par image squeeze hone se rokega */
+}
+
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav-logo-text span {
+  color: var(--warm);
+}
+
+/* --- Mobile View Support --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 20px; /* Mobile spacing adjustment */
+  }
+
+  .nav-logo img.site-logo {
+    height: 40px !important;
+    width: 40px !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .nav-logo-text {
+    font-size: 18px;
+  }
+}
     .nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
     .nav-logo-text span{color:var(--warm)}
     .nav-links{display:flex;gap:24px;list-style:none}
@@ -177,7 +236,7 @@
     .carousel-wrap{display:flex;align-items:center;gap:14px}
     .carousel-track-wrap{overflow:hidden;flex:1;border-radius:20px;max-width:100%}
     .carousel-track{display:flex;gap:18px;transition:transform 0.4s ease}
-    .carousel-track .testimonial-card{min-width:calc(33.33% - 12px);flex-shrink:0}
+    .carousel-track .testimonial-card{flex:0 0 calc((100% - 36px) / 3);min-width:0;flex-shrink:0}
     .testimonial-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:all 0.3s;word-wrap:break-word;overflow-wrap:break-word;overflow:hidden}
     .testimonial-card:hover{border-color:rgba(232,168,124,0.3)}
     .quote-mark{font-size:48px;color:var(--warm);font-family:'Playfair Display',serif;line-height:1;margin-bottom:10px;display:block}
@@ -196,7 +255,7 @@
     .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
     .dot{width:7px;height:7px;border-radius:50%;background:var(--border2);cursor:pointer;transition:all 0.2s}
     .dot.active{background:var(--warm);width:20px;border-radius:4px}
-
+     .journey-link{margin-top:auto;color:var(--warm);font-size:13px;font-weight:700}
     /* BOOK DEMO */
     .book-demo{background:radial-gradient(ellipse at 30% 50%,rgba(232,168,124,0.1) 0%,transparent 60%),var(--dark)}
     .demo-form-wrap{max-width:780px;margin:0 auto}
@@ -219,6 +278,9 @@
     .form-submit-btn{width:100%;background:var(--warm);color:var(--dark);border:none;border-radius:50px;padding:16px;font-size:16px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:all 0.2s}
     .form-submit-btn:hover{background:var(--warm2);transform:translateY(-2px)}
     .form-note{text-align:center;margin-top:12px;font-size:12px;color:var(--gray)}
+    .w3-form button:disabled{opacity:.65;cursor:not-allowed}
+    .w3-form input:invalid,.w3-form select:invalid,.w3-form textarea:invalid{border-color:rgba(255,120,120,.45)}
+    .form-status{margin-top:14px;padding:11px 14px;border-radius:10px;font-size:13px;line-height:1.5}
 
     /* CONTACT */
     .contact{background:var(--dark2)}
@@ -301,10 +363,61 @@
     .footer-links a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;transition:color 0.2s}
     .footer-links a:hover{color:var(--warm)}
 
+    /* MOBILE NAVIGATION */
+    .mobile-menu-toggle{
+      display:none;
+      width:44px;
+      height:44px;
+      border:1px solid var(--border2);
+      border-radius:12px;
+      background:rgba(255,255,255,0.04);
+      cursor:pointer;
+      padding:9px;
+      flex-direction:column;
+      justify-content:center;
+      gap:5px;
+      flex-shrink:0;
+    }
+    .mobile-menu-toggle span{
+      display:block;
+      width:100%;
+      height:2px;
+      background:var(--white);
+      border-radius:2px;
+      transition:transform .2s,opacity .2s;
+    }
+    .mobile-menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .mobile-menu-toggle.active span:nth-child(2){opacity:0}
+    .mobile-menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:calc(100% + 1px);
+      left:12px;
+      right:12px;
+      background:rgba(26,26,46,.99);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:10px;
+      box-shadow:0 20px 50px rgba(0,0,0,.45);
+    }
+    .mobile-menu.open{display:flex;flex-direction:column}
+    .mobile-menu a{
+      color:rgba(255,255,255,.82);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:600;
+      padding:13px 14px;
+      border-radius:10px;
+    }
+    .mobile-menu a:hover,.mobile-menu a:focus{background:rgba(232,168,124,.1);color:var(--warm)}
+    .mobile-menu .mobile-menu-cta{background:var(--warm);color:var(--dark);text-align:center;margin-top:4px}
+
     /* RESPONSIVE */
     @media(max-width:768px){
-      nav{padding:12px 20px}
-      .nav-links{display:none}
+      nav{padding:12px 20px;position:fixed}
+      .nav-links,.nav-cta{display:none}
+      .mobile-menu-toggle{display:flex}
       .hero{padding:100px 20px 60px}
       .hero-inner{grid-template-columns:1fr;gap:40px}
       .hero h1{font-size:34px}
@@ -315,32 +428,80 @@
       .about-grid,.founder-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
       .svc-cols,.why-grid{grid-template-columns:1fr}
       .process-content.active{grid-template-columns:1fr 1fr}
-      .carousel-track .testimonial-card{min-width:100%;max-width:100%;overflow:hidden}
+      .carousel-track .testimonial-card{flex:0 0 100%;min-width:0;max-width:100%;overflow:hidden}
       .form-grid,.consult-2col{grid-template-columns:1fr}
       .founder-wins{grid-template-columns:1fr}
       .chat-window{width:calc(100vw - 32px);right:16px}
       .cookie-banner{flex-direction:column;text-align:center;bottom:16px;padding:18px}
       .cookie-btns{width:100%;justify-content:center}
     }
+
+    /* FINAL JS SAFETY OVERRIDES */
+    .cookie-banner.hide{pointer-events:none}
+    .mobile-menu-toggle{z-index:10002;position:relative}
+    .mobile-menu{z-index:10001}
+    @media(max-width:768px){
+      nav{z-index:10000}
+      .mobile-menu-toggle{display:flex !important}
+      .nav-links,.nav-cta{display:none !important}
+    }
+
+  .whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
   </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="nav-logo">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
-    <span class="nav-logo-text">Techs<span> Academy</span></span>
-  </a>
+<a href="index.html" class="nav-logo">
+  <img src="assets/logo.png" alt="Techs Academy Logo" class="site-logo" />
+  <span class="nav-logo-text">Techs<span> Academy</span></span>
+</a>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="student.html">Students</a></li>
     <li><a href ="career-guidance.html">Career Guidance</a></li>
+    <li><a href ="course.html">Courses</a></li>
     <li><a href="service.html">Services</a></li>
     <li><a href="companies.html">For Companies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#book-demo" class="nav-cta">Get Started</a>
+  <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="about.html">About</a>
+    <a href="student.html">Students</a>
+    <a href="career-guidance.html">Career Guidance</a>
+    <a href ="course.html">Courses</a>
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="#contact">Contact</a>
+    <a href="#book-demo" class="mobile-menu-cta">Get Started →</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -349,7 +510,7 @@
     <div>
       <div class="hero-tag">✦ MSME Registered · Govt. of India</div>
       <h1>One Platform. <em>Three Powerful</em> Solutions.</h1>
-      <p class="hero-sub">Tech Academy is your complete tech partner — We train developers, place talent in top companies, and build backend systems for businesses.</p>
+      <p class="hero-sub">Tech Academy is your complete tech partner — We train developers, support career growth, connect technical talent with companies, and build practical backend and AI solutions for businesses.</p>
       <div class="hero-pillars">
         <div class="pillar"><span class="pillar-icon">🎓</span><div class="pillar-text">Train</div><div class="pillar-sub">Developers</div></div>
         <div class="pillar"><span class="pillar-icon">🏆</span><div class="pillar-text">Place</div><div class="pillar-sub">In Top Companies</div></div>
@@ -432,7 +593,8 @@
         <div class="about-card"><div class="about-card-num">5+</div><div><h4>Students Placed</h4><p>At Big 4, Deloitte, Tech Mahindra & Honeywell</p></div></div>
         <div class="about-card"><div class="about-card-num">1:1</div><div><h4>Personal Sessions Only</h4><p>Full attention, your pace, your goals</p></div></div>
         <div class="about-card"><div class="about-card-num">6+</div><div><h4>Years Industry Experience</h4><p>Real production systems, not textbook theory</p></div></div>
-        <div class="about-card"><div class="about-card-num">₹0</div><div><h4>Zero Cost Until You Hire</h4><p>For companies using our placement service</p></div></div>
+        <div class="about-card"><div class="about-card-num">🤝</div><div><h4>Simple Referral Model</h4><p>We refer candidates — 
+ you interview and decide</p></div></div>
       </div>
     </div>
   </div>
@@ -461,6 +623,7 @@
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Resume Review</h5><p>ATS-friendly, achievement-based — 24hr turnaround</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Mock Interviews</h5><p>Real questions, live feedback, confidence building</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Career Counselling</h5><p>Roadmap, job strategy, skill planning</p></div></div>
+          <a href="student.html" class="journey-link" style="display:inline-block;margin-top:20px">Explore Student Programs →</a>
         </div>
       </div>
 
@@ -477,6 +640,7 @@
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Requirement Based Hiring</h5><p>Share your tech stack & team needs — we match the best fit</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Screening & Shortlisting</h5><p>We interview candidates before you do — saving your time</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Success Fee Only</h5><p>Pay only when you successfully hire — zero upfront cost</p></div></div>
+          <a href="companies.html" class="journey-link" style="display:inline-block;margin-top:20px">For Companies →</a>
         </div>
       </div>
 
@@ -493,6 +657,7 @@
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>AI & LLM Integration</h5><p>RAG pipelines, Groq, OpenAI — intelligent backends</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>Performance Optimization</h5><p>Query tuning, Redis caching — up to 98% faster</p></div></div>
           <div class="svc-item"><div class="svc-dot"></div><div class="svc-item-text"><h5>DevOps & Infrastructure</h5><p>Docker, AWS, CI/CD — scalable deployments</p></div></div>
+         <a href="service.html" class="journey-link" style="display:inline-block;margin-top:20px">View All Services →</a>
         </div>
       </div>
 
@@ -623,50 +788,117 @@
         <p>We have received your request. Aditya will contact you within 24 hours.</p>
         <a href="https://wa.me/919760504977?text=Hi%20Aditya%2C%20I%20just%20submitted%20a%20request%20on%20Tech%20Academy" target="_blank" class="btn-warm" style="margin-top:18px;display:inline-block">💬 Chat on WhatsApp</a>
       </div>
-      <form name="demo-booking" method="POST" data-netlify="true" id="demoForm" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="demo-booking"/>
-        <input type="hidden" name="bot-field"/>
-        <div class="form-grid">
-          <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Your name" required/></div>
-          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required/></div>
-          <div class="form-group"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required/></div>
-          <div class="form-group"><label>I am a... *</label>
-            <select name="user_type" required>
-              <option value="" disabled selected>Select</option>
-              <option>Student / Individual — Want to learn</option>
-              <option>Company — Want to hire developers</option>
-              <option>Business — Want to build a product</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Service Needed *</label>
-            <select name="service" required>
-              <option value="" disabled selected>Select service</option>
-              <option>Backend Development Training</option>
-              <option>Career Counselling</option>
-              <option>Resume Review</option>
-              <option>Mock Interviews</option>
-              <option>Tech Talent Placement</option>
-              <option>Backend Development Project</option>
-              <option>AI/LLM Integration</option>
-              <option>Not Sure — Need Guidance</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Preferred Time</label>
-            <select name="preferred_time">
-              <option value="" disabled selected>Select time</option>
-              <option>Morning (9 AM – 12 PM)</option>
-              <option>Afternoon (12 PM – 4 PM)</option>
-              <option>Evening (4 PM – 8 PM)</option>
-              <option>Weekend Only</option>
-            </select>
-          </div>
-          <div class="form-group full-width"><label>Tell us about your requirement *</label>
-            <textarea name="message" rows="4" placeholder="Describe what you need — learning goals, hiring requirements, or project details..." required></textarea>
-          </div>
-        </div>
-        <button type="submit" class="form-submit-btn">Submit Request →</button>
-        <p class="form-note">★ We respond within 24 hours · No spam · No commitment</p>
-      </form>
+    <form
+  id="consultForm"
+  class="w3-form"
+  data-form-name="Quick Consultation"
+  data-form-subject="New Quick Consultation - Techs Academy"
+  data-success-message="Received! We will contact you within 24 hours."
+  novalidate
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5"
+  />
+
+  <input
+    type="hidden"
+    name="from_name"
+    value="Techs Academy Website"
+  />
+
+  <input
+  type="hidden"
+  name="botcheck"
+  value=""
+/>
+
+  <div class="consult-2col">
+
+    <div class="consult-form-group">
+      <label for="consult-name">Name *</label>
+      <input
+        id="consult-name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        minlength="2"
+        maxlength="80"
+        autocomplete="name"
+        required
+      />
+    </div>
+
+    <div class="consult-form-group">
+      <label for="consult-phone">Phone *</label>
+      <input
+        id="consult-phone"
+        type="tel"
+        name="phone"
+        placeholder="+91 98765 43210"
+        minlength="7"
+        maxlength="20"
+        autocomplete="tel"
+        required
+      />
+    </div>
+
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-email">Email *</label>
+    <input
+      id="consult-email"
+      type="email"
+      name="email"
+      placeholder="you@email.com"
+      maxlength="120"
+      autocomplete="email"
+      required
+    />
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-help">I need help with *</label>
+
+    <select
+      id="consult-help"
+      name="help_type"
+      required
+    >
+      <option value="" disabled selected>Select</option>
+      <option>Learning Backend Development</option>
+      <option>Hiring Backend Developers</option>
+      <option>Building a Tech Product</option>
+      <option>Career Guidance</option>
+      <option>Resume Review</option>
+      <option>Not Sure</option>
+    </select>
+  </div>
+
+  <div class="consult-form-group">
+    <label for="consult-message">Message</label>
+
+    <textarea
+      id="consult-message"
+      name="message"
+      rows="3"
+      placeholder="Tell us more..."
+      minlength="10"
+      maxlength="1500"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="consult-submit"
+    id="consultSubmitBtn"
+  >
+    Send Request →
+  </button>
+
+</form>
     </div>
   </div>
 </section>
@@ -690,14 +922,14 @@
       <div class="contact-right">
         <h3>Quick Consultation Request</h3>
         <p>Not sure which service fits you? Fill the form and we will guide you to the right solution.</p>
-        <form name="consultation-booking" method="POST" data-netlify="true" id="consultForm" netlify-honeypot="bot-field2">
-          <input type="hidden" name="form-name" value="consultation-booking"/>
-          <input type="hidden" name="bot-field2"/>
+        <form id="consultForm" class="w3-form" data-form-name="Quick Consultation" data-form-subject="New Quick Consultation - Techs Academy" data-success-message="Received! We will contact you within 24 hours.">
+          <input type="hidden" name="access_key" value="3f4deeb1-ed8e-4cfa-990a-3375f9ce95e5"/>
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off"/>
           <div class="consult-2col">
-            <div class="consult-form-group"><label>Name *</label><input type="text" name="name" placeholder="Your name" required/></div>
-            <div class="consult-form-group"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 98765 43210" required/></div>
+            <div class="consult-form-group"><label>Name *</label><input type="text" name="name" placeholder="Your name" minlength="2" maxlength="80" autocomplete="name" required/></div>
+            <div class="consult-form-group"><label>Phone *</label><input type="tel" name="phone" type="tel" placeholder="+91 98765 43210" minlength="7" maxlength="20" autocomplete="tel" required/></div>
           </div>
-          <div class="consult-form-group"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" required/></div>
+          <div class="consult-form-group"><label>Email *</label><input type="email" name="email" type="email" placeholder="you@email.com" maxlength="120" autocomplete="email" required/></div>
           <div class="consult-form-group"><label>I need help with *</label>
             <select name="help_type" required>
               <option value="" disabled selected>Select</option>
@@ -709,7 +941,7 @@
               <option>Not Sure</option>
             </select>
           </div>
-          <div class="consult-form-group"><label>Message</label><textarea name="message" rows="3" placeholder="Tell us more..." style="background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:10px;padding:11px 14px;color:var(--white);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;resize:vertical;min-height:80px;"></textarea></div>
+          <div class="consult-form-group"><label>Message</label><textarea name="message" rows="3" placeholder="Tell us more..." minlength="10" maxlength="1500" style="background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:10px;padding:11px 14px;color:var(--white);font-size:14px;font-family:Inter,sans-serif;outline:none;width:100%;resize:vertical;min-height:80px;"></textarea></div>
           <button type="submit" class="consult-submit" id="consultSubmitBtn">Send Request →</button>
           <div class="consult-success" id="consultSuccess"><p>✅ Received! We will contact you within 24 hours.</p></div>
         </form>
@@ -741,220 +973,40 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>Tech Academy</span> — Rishikesh, Uttarakhand · MSME Registered</p>
+  <p>© 2026 <span>Techs Academy</span> — Rishikesh, Uttarakhand · MSME Registered</p>
   <p>Founded by <span>Aditya Narayan Gaur</span> · Backend Engineer · Mentor · Entrepreneur</p>
   <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#for-companies">For Companies</a>
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
     <a href="https://www.instagram.com/iam.gaur25/" target="_blank">Instagram</a>
     <a href="https://www.linkedin.com/company/90444200" target="_blank">LinkedIn</a>
-    <a href="mailto:gauraditya50@gmail.com">Email</a>
+    <a href="mailto:info@techsacademy.in">Email</a>
     <a href="https://wa.me/919760504977" target="_blank">WhatsApp</a>
   </div>
 </footer>
+  <!-- WhatsApp Floating Button -->
+<a
+  href="https://wa.me/919760504977?text=Hi%20Techs%20Academy,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Techs Academy on WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-icon">🍪</div>
   <div class="cookie-text"><h4>We use cookies</h4><p>We use cookies to improve your experience. <a href="#">Learn more</a></p></div>
   <div class="cookie-btns">
-    <button class="cookie-accept" id="cookieAccept">Accept All</button>
-    <button class="cookie-decline" id="cookieDecline">Decline</button>
+    <button type="button" class="cookie-accept" id="cookieAccept">Accept All</button>
+    <button type="button" class="cookie-decline" id="cookieDecline">Decline</button>
   </div>
 </div>
 
-<!-- CHAT -->
-<!-- <button class="chat-btn" id="chatBtn" title="Chat with us">💬</button>
-<div class="chat-window" id="chatWindow">
-  <div class="chat-header">
-    <div class="chat-header-avatar">🎓</div>
-    <div class="chat-header-info"><h4>Tech Academy Assistant</h4><p>Online · Usually replies instantly</p></div>
-    <button class="chat-header-close" id="chatClose">✕</button>
-  </div>
-  <div class="chat-messages" id="chatMessages">
-    <div class="chat-msg bot">Namaste! 👋 Main Tech Academy ka assistant hoon.<br><br>Aap student hain, company hain, ya project build karna chahte hain?</div>
-  </div>
-  <div class="chat-quick" id="quickReplies">
-    <button class="quick-btn" onclick="window.sendQuick('Training aur fees kya hain?')">🎓 Training</button>
-    <button class="quick-btn" onclick="window.sendQuick('Developer hire karna hai')">🏢 Hire</button>
-    <button class="quick-btn" onclick="window.sendQuick('Project build karna hai')">💻 Build</button>
-    <button class="quick-btn" onclick="window.sendQuick('Demo book karna hai')">📅 Demo</button>
-  </div>
-  <div class="chat-input-wrap">
-    <input type="text" class="chat-input" id="chatInput" placeholder="Apna question likho..."/>
-    <button class="chat-send" id="chatSend">➤</button>
-  </div>
-</div> -->
+<script src="forms.js" defer></script>
+<script src="index.js" defer></script>
 
-<script>
-  // Process tabs
-  function switchTab(tab) {
-    document.querySelectorAll('.process-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.process-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
-    event.target.classList.add('active');
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-
-    // Cookie Banner
-    const cookieBanner = document.getElementById('cookieBanner');
-    const cookieAccept = document.getElementById('cookieAccept');
-    const cookieDecline = document.getElementById('cookieDecline');
-    if(cookieBanner) {
-      if(localStorage.getItem('cookieConsent')) { cookieBanner.style.display = 'none'; }
-      function hideBanner() { cookieBanner.classList.add('hide'); setTimeout(() => { cookieBanner.style.display = 'none'; }, 300); }
-      cookieAccept.addEventListener('click', function() { localStorage.setItem('cookieConsent','accepted'); hideBanner(); });
-      cookieDecline.addEventListener('click', function() { localStorage.setItem('cookieConsent','declined'); hideBanner(); });
-    }
-
-    // Carousel
-    const track = document.getElementById('carouselTrack');
-    const dotsWrap = document.getElementById('carouselDots');
-    if(track) {
-      const cards = track.querySelectorAll('.testimonial-card');
-      let current = 0;
-      let perView = window.innerWidth <= 768 ? 1 : 3;
-      let maxSlide = cards.length - perView;
-      for(let i = 0; i <= maxSlide; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(dot);
-      }
-      function goTo(index) {
-        current = Math.max(0, Math.min(index, maxSlide));
-        const cardWidth = cards[0].offsetWidth + 18;
-        track.style.transform = 'translateX(-' + (current * cardWidth) + 'px)';
-        document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === current));
-      }
-      document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
-      document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
-      setInterval(() => goTo(current >= maxSlide ? 0 : current + 1), 4000);
-      window.addEventListener('resize', () => { perView = window.innerWidth <= 768 ? 1 : 3; maxSlide = cards.length - perView; goTo(0); });
-    }
-
-    // Demo Form
-    const demoForm = document.getElementById('demoForm');
-    const formSuccess = document.getElementById('formSuccess');
-    if(demoForm) {
-      demoForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = demoForm.querySelector('.form-submit-btn');
-        btn.textContent = 'Sending...'; btn.disabled = true;
-        try {
-          const res = await fetch('/', {method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(demoForm)).toString()});
-          if(res.ok) { demoForm.classList.add('hide'); formSuccess.classList.add('show'); }
-          else { alert('Problem aayi! WhatsApp pe contact karein: +91-9760504977'); btn.textContent='Submit Request →'; btn.disabled=false; }
-        } catch(err) { alert('Network error! WhatsApp pe contact karein.'); btn.textContent='Submit Request →'; btn.disabled=false; }
-      });
-    }
-
-    // Consult Form
-    const consultForm = document.getElementById('consultForm');
-    const consultSuccess = document.getElementById('consultSuccess');
-    const consultBtn = document.getElementById('consultSubmitBtn');
-    if(consultForm) {
-      consultForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        consultBtn.textContent = 'Sending...'; consultBtn.disabled = true;
-        try {
-          const res = await fetch('/', {method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(consultForm)).toString()});
-          if(res.ok) { consultForm.style.display='none'; consultSuccess.style.display='block'; }
-          else { alert('Problem aayi! WhatsApp pe contact karein.'); consultBtn.textContent='Send Request →'; consultBtn.disabled=false; }
-        } catch(err) { alert('Network error!'); consultBtn.textContent='Send Request →'; consultBtn.disabled=false; }
-      });
-    }
-
-    // Chatbot
-//     const chatBtn = document.getElementById('chatBtn');
-//     const chatWindow = document.getElementById('chatWindow');
-//     const chatClose = document.getElementById('chatClose');
-//     const chatMessages = document.getElementById('chatMessages');
-//     const chatInput = document.getElementById('chatInput');
-//     const chatSend = document.getElementById('chatSend');
-//     const quickReplies = document.getElementById('quickReplies');
-
-//     if(chatBtn) {
-//       chatBtn.addEventListener('click', () => { chatWindow.classList.toggle('open'); if(chatWindow.classList.contains('open')) chatInput.focus(); });
-//       chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
-
-//       function addMsg(text, type) {
-//         const msg = document.createElement('div');
-//         msg.className = 'chat-msg ' + type;
-//         msg.innerHTML = text;
-//         chatMessages.appendChild(msg);
-//         chatMessages.scrollTop = chatMessages.scrollHeight;
-//       }
-
-//       function showTyping() {
-//         const t = document.createElement('div');
-//         t.className = 'chat-typing'; t.id = 'typingIndicator';
-//         t.innerHTML = '<span></span><span></span><span></span>';
-//         chatMessages.appendChild(t);
-//         chatMessages.scrollTop = chatMessages.scrollHeight;
-//       }
-
-//       function hideTyping() { const t = document.getElementById('typingIndicator'); if(t) t.remove(); }
-
-//       async function sendMessage(userMsg) {
-//         if(!userMsg.trim()) return;
-//         quickReplies.style.display = 'none';
-//         addMsg(userMsg, 'user');
-//         chatInput.value = '';
-//         showTyping();
-//         chatSend.disabled = true;
-//         try {
-//           const res = await fetch('https://api.anthropic.com/v1/messages', {
-//             method: 'POST',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//               model: 'claude-sonnet-4-6',
-//               max_tokens: 1000,
-//               system: `Tu Tech Academy ka friendly AI assistant hai. Hinglish mein baat kar.
-
-// Tech Academy ek 3-in-1 platform hai:
-// 1. TRAIN - Backend development training (Node.js, NestJS, PostgreSQL, Redis, Docker)
-// 2. PLACE - Companies ke liye tech talent placement (zero cost until hire)
-// 3. BUILD - Businesses ke liye backend development projects
-
-// Founder: Aditya Narayan Gaur - 6+ years experience, 10,000+ users served
-// Location: Rishikesh, Uttarakhand | Online pan-India
-// Contact: gauraditya50@gmail.com | +91-9760504977
-// Website: techacademy.netlify.app
-// MSME Registered | Govt. of India
-
-// Student Placements: Shrikar P (Big 4), Tarun (Deloitte), Veda (Tech Mahindra), Nihal (Honeywell)
-
-// Services:
-// FOR INDIVIDUALS: Backend Training (3 months), Resume Review, Mock Interviews, Career Counselling
-// FOR COMPANIES: Tech talent placement - share requirement, we screen, you interview, pay only on hire
-// FOR BUSINESSES: Backend development, AI/LLM integration, DevOps, Performance optimization
-
-// Demo/Contact ke liye: Website pe form fill karo ya WhatsApp: +91-9760504977
-
-// Short friendly answers do. 2-3 sentences max.`,
-//               messages: [{ role: 'user', content: userMsg }]
-//             })
-//           });
-//           hideTyping();
-//           const data = await res.json();
-//           const reply = data.content?.[0]?.text || 'Kuch problem aayi! WhatsApp pe contact karein: +91-9760504977';
-//           addMsg(reply, 'bot');
-//         } catch(err) {
-//           hideTyping();
-//           addMsg('Network issue hai! WhatsApp pe contact karein: <strong>+91-9760504977</strong>', 'bot');
-//         }
-//         chatSend.disabled = false;
-//         chatInput.focus();
-//       }
-
-//       window.sendQuick = function(msg) { sendMessage(msg); };
-//       chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-//       chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(chatInput.value); });
-//     }
-
-  });
-</script>
 </body>
 </html>

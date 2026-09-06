@@ -3,12 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backend Development Training | Techs Academy</title>
-  <meta name="description" content="Learn backend development with Node.js, NestJS, PostgreSQL, Redis and Docker through practical, job-focused training at Techs Academy." />
+  <title>Backend Development Course in Rishikesh | Node.js & NestJS | Techs Academy</title>
+  <meta
+  name="description"
+  content="Learn backend development with Node.js, NestJS, PostgreSQL, Redis, Docker and REST APIs through practical, project-based training at Techs Academy in Rishikesh."
+/>
   <meta name="keywords" content="backend development course, Node.js course, NestJS training, backend training Rishikesh, backend development training India" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/>
+  <link
+  rel="canonical"
+  href="https://www.techsacademy.in/student.html"
+/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Backend Development Course in Rishikesh | Techs Academy" />
+<meta property="og:description" content="Learn Node.js, NestJS, PostgreSQL, Redis, Docker and REST APIs through practical backend development training at Techs Academy." />
+<meta property="og:url" content="https://www.techsacademy.in/student.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Backend Development Course in Rishikesh | Techs Academy" />
+<meta name="twitter:description" content="Practical backend development training with Node.js, NestJS, PostgreSQL, Redis and Docker." />
+<meta property="og:site_name" content="Techs Academy" />
+<meta name="robots" content="index, follow" />
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23E8A87C'/><text x='50' y='72' font-size='55' font-weight='700' text-anchor='middle' fill='%231a1a2e' font-family='Georgia'>T</text></svg>"/> -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"/>
+     <link rel="icon" type="image/png" href="assets/favicon.jpg" />
+<link rel="apple-touch-icon" href="assets/favicon.jpg" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK9NSCNJB3"></script>
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Backend Development Course",
+  "description": "Practical backend development training covering Node.js, TypeScript, NestJS, PostgreSQL, Redis, REST APIs and Docker.",
+  "url": "https://www.techsacademy.in/student.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Techs Academy",
+    "url": "https://www.techsacademy.in/"
+  },
+  "educationalLevel": "Beginner to Intermediate",
+  "inLanguage": "en",
+  "courseMode": "onsite",
+  "locationCreated": {
+    "@type": "Place",
+    "name": "Rishikesh, Uttarakhand, India"
+  }
+}
+</script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VK9NSCNJB3');
+</script>
   <style>
    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -37,8 +83,52 @@
     .links{display:flex;gap:25px;list-style:none;font-size:14px;color:rgba(255,255,255,.72)}
     .links a:hover{color:var(--warm)} */
     nav{position:fixed;top:0;left:0;right:0;background:rgba(15,15,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;z-index:999}
-    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+     .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Naye Round Golden Logo ke liye fixed height/width aur clean background */
+.nav-logo img.site-logo {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent; /* Purane white background aur padding ko hata diya hai */
+  padding: 0;
+  flex-shrink: 0;          /* Mobile layout par image squeeze hone se rokega */
+}
+
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav-logo-text span {
+  color: var(--warm);
+}
+
+/* --- Mobile View Support --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 20px; /* Mobile spacing adjustment */
+  }
+
+  .nav-logo img.site-logo {
+    height: 40px !important;
+    width: 40px !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .nav-logo-text {
+    font-size: 18px;
+  }
+}
     .nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
     .nav-logo-text span{color:var(--warm)}
     .nav-links{display:flex;gap:24px;list-style:none}
@@ -114,18 +204,104 @@
     input:focus,select:focus,textarea:focus{border-color:var(--warm)}select option{background:var(--dark2)}
     textarea{min-height:100px;resize:vertical}.submit{border:0;cursor:pointer;margin-top:15px;width:100%;font:800 15px Inter}
     .note{text-align:center;color:var(--gray);font-size:11px;margin-top:10px}
-    footer{padding:30px 25px;text-align:center;border-top:1px solid var(--border);color:rgba(255,255,255,.35);font-size:12px}
+        footer{background:var(--dark);border-top:1px solid var(--border);padding:28px 40px;text-align:center}
+    footer p{color:rgba(255,255,255,0.3);font-size:13px;margin-bottom:6px}
     footer span{color:var(--warm)}
+    .footer-links{display:flex;justify-content:center;gap:18px;margin-top:10px}
+    .footer-links a{color:rgba(255,255,255,0.3);font-size:12px;text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--warm)}
     @media(max-width:800px){
       .links{display:none}.hero-grid,.mentor{grid-template-columns:1fr;gap:35px}h1{font-size:39px}
       .cards,.curriculum{grid-template-columns:1fr}.outcomes{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}
       .form-grid{grid-template-columns:1fr}.full{grid-column:auto}.cta h2{font-size:32px}
     }
+
+      /* Mobile Toggle Button (Hamburger) */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.mobile-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Toggle active animation (Cross Icon) */
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Drawer (Default hidden) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; /* Navbar height */
+  left: 0;
+  width: 100%;
+  background: var(--dark);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+  
+  .nav-links, 
+  .nav-cta {
+    display: none !important; /* Mobile pe desktop links hide karne ke liye */
+  }
+
+  .mobile-toggle {
+    display: flex; /* Mobile screen par hamburger toggle show karein */
+  }
+}
   </style>
 </head>
 
 <body>
-<nav>
+<!-- <nav>
   <a href="index.html" class="nav-logo">
     <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAYHAgQFAQj/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAfpkYoAAAAAAAAwM1WWmAAAAAI/II6VHf1f5E+AAAA1doRza50qOHpSmlS3tzkdcAAAeeiJywHJ6wjckAAAAAAAAAAAAAAAAD//EACUQAAEEAQIFBQAAAAAAAAAAAAIDBAUGARUwAAcQElARICMkJv/aAAgBAQABBQLxhl2hRrYtZB25j5k538pfdtn9uSvUJrlbo81rtc2HAqHgU5AUjF92qA/4W1AeEAVEthVcH0905msTBjEySUxG+/OPXEbWGMS+6SkWhMM4WvM6+n5j/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFH/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwFH/8QANxAAAQIDAggMBwEAAAAAAAAAAQIDBBESACEFEyIwMUFRcRAjMkJQYWJygYKRoSQzUrLR0uHw/9oACAEBAAY/AujFGYEhpNo1uLQhqLYc5CBLJ8c41BDTFKoV3NK/a7zWgcKDIg48Yl7YDo/U+BzkTFcxr4dvw5Z9bvJaJaSJvN8c1vH8naGeUZvNjFO94f4HMoxS6DUJ7tdk1vtVySJ6p1X6tlm6FNTDeWTrVLdtsaFt00jSb5zE+bvsUpiYcPKOQFbKd31X2dxi6xPI6hmW4QGYg049wdo3IH3H04YTDEPdE4PdCp9kn8ytDxjJ4t5NW7qzErOxcOHg+78xS3lKr3zPCuFiQpTC+UlKimfpZbcElbbajMoU4VD36Z//xAAkEAACAQMDBAMBAAAAAAAAAAABESEAMUFRcYEQMGGRUKGxwf/aAAgBAQABPyH4x0gkOEb1dDqgPaJMEF7juF4iTAychzCh0STEEidO4E6mb3MG61RV/wAmmN0c1nbyvZZ3Hs7MNAY4l4SDigSA4i2mV4i39pbagJOiI0BPZiJKIAIg5YJwkLbA1iBuG4lBiXssqNwyxACzmLt8AeeyHGp2Hmcfd6268ug/PuNPDAgHdkvILHHYdsQwmCjX4hDXCPqrsFhEokrUrtYNOoBFHb5n/9oADAMBAAIAAwAAABD/AP8A/wD/AP8A/wD/AL//AP8A/wD/AL3/AP8A/wD/AOf/AP8A/wD+/wDvf/8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQMBAT8QR//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8QR//EACAQAQEAAQQDAQEBAAAAAAAAAAERIQAxUWEwQXEQUIH/2gAIAQEAAT8Q/mA6yUky1cHvQnmKHnMxQdPxL5HaLI7h0ewUH1ogJKf/AICQJzv08j9snrMPmLHPfWxL4FRK9zD2eNLl3BVAfU6dvwjGGuwuympI0MmdXxiSpDvVbBywlxaM5HjYIgAuzEg09bVNtnQ1DMFYUaZOJRliW9cGcByoQzzTAuItTxyafASva9l+UtHZOD9xgWllDLNwMdpzug8E5S5Os17XgFIDYIvsTZ70UskoBbSDFUUpWb/qc8aYVABaBljDQWdbUynTErFhbD+z/9k=" alt="Techs Academy"/>
     <span class="nav-logo-text">Techs<span> Academy</span></span>
@@ -134,11 +310,51 @@
     <li><a href="about.html">About</a></li>
     <li><a href="student.html" class ="active">Students</a></li>
     <li><a href ="career-guidance.html">Career Guidance</a></li>
+    <li><a href ="course.html">Courses</a></li>
     <li><a href="service.html">Services</a></li>
     <li><a href="companies.html">For Companies</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
     <a class="nav-btn" href="#apply">Book Free Counselling</a>
+  </div>
+</nav> -->
+
+<nav>
+   <a href="index.html" class="nav-logo">
+  <img src="assets/logo.png" alt="Techs Academy Logo" class="site-logo" />
+  <span class="nav-logo-text">Techs<span> Academy</span></span>
+</a>
+
+  <!-- Desktop Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="about.html" >About</a></li>
+    <li><a href="student.html" class="active">Students</a></li>
+    <li><a href="career-guidance.html">Career Guidance</a></li>
+    <li><a href ="course.html">Courses</a></li>
+    <li><a href="service.html">Services</a></li>
+    <li><a href="companies.html">For Companies</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <a href="#book-demo" class="nav-cta">Get Started</a>
+
+  <!-- 1. Mobile Toggle Button (Hamburger Icon) -->
+  <button id="mobileMenuToggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- 2. Mobile Menu Overlay/Drawer -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="about.html">About</a>
+    <a href="student.html">Students</a>
+    <a href="career-guidance.html">Career Guidance</a>
+    <a href ="course.html">Courses</a>
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="#contact">Contact</a>
+    <a href="#book-demo" class="mobile-nav-cta">Get Started</a>
   </div>
 </nav>
 
@@ -441,9 +657,18 @@
 </section>
 
 <footer>
-  <p>© 2026 <span>Techs Academy</span> · Rishikesh, Uttarakhand · MSME Registered</p>
-  <p style="margin-top:5px">Train. Place. Build.</p>
+  <p>© 2026 <span>Techs Academy</span> — Rishikesh, Uttarakhand · MSME Registered</p>
+  <p>Founded by <span>Aditya Narayan Gaur</span> · Backend Engineer · Mentor · Entrepreneur</p>
+  <div class="footer-links">
+    <a href="service.html">Services</a>
+    <a href="companies.html">For Companies</a>
+    <a href="https://www.instagram.com/iam.gaur25/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/company/90444200" target="_blank">LinkedIn</a>
+    <a href="mailto:info@techsacademy.in">Email</a>
+    <a href="https://wa.me/919760504977" target="_blank">WhatsApp</a>
+  </div>
 </footer>
-
+<script src ="index.js" defer></script>
+<script src ="forms.js" defer></script>
 </body>
 </html>
