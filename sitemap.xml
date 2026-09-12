@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage -->
   <url>
-    <loc>https://techsacademy.in/</loc>
+    <loc>https://www.techsacademy.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <lastmod>2026-08-31</lastmod>
@@ -12,7 +11,7 @@
 
   <!-- Students -->
   <url>
-    <loc>https://techsacademy.in/student</loc>
+    <loc>https://www.techsacademy.in/student</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-08-31</lastmod>
@@ -20,7 +19,7 @@
 
   <!-- Courses -->
   <url>
-    <loc>https://techsacademy.in/course</loc>
+    <loc>https://www.techsacademy.in/course</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-08-31</lastmod>
@@ -28,7 +27,7 @@
 
   <!-- Career Guidance -->
   <url>
-    <loc>https://techsacademy.in/career-guidance</loc>
+    <loc>https://www.techsacademy.in/career-guidance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <lastmod>2026-08-31</lastmod>
@@ -36,7 +35,7 @@
 
   <!-- Services -->
   <url>
-    <loc>https://techsacademy.in/service</loc>
+    <loc>https://www.techsacademy.in/service</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-08-31</lastmod>
@@ -44,15 +43,22 @@
 
   <!-- Companies -->
   <url>
-    <loc>https://techsacademy.in/companies</loc>
+    <loc>https://www.techsacademy.in/companies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-08-31</lastmod>
   </url>
 
+  <!--Blogs -->
+  <url>
+    <loc>https://www.techsacademy.in/blog</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-31</lastmod>
+  </url>
   <!-- About Us -->
   <url>
-    <loc>https://techsacademy.in/about</loc>
+    <loc>https://www.techsacademy.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-08-31</lastmod>
