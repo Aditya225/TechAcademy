@@ -656,6 +656,10 @@
     </div>
 
     <!-- OTHER BLOG POSTS -->
+    <div class="posts-carousel">
+      <button class="carousel-arrow prev" onclick="scrollPosts(-1)" aria-label="Previous">‹</button>
+      <button class="carousel-arrow next" onclick="scrollPosts(1)" aria-label="Next">›</button>
+
     <div class="posts" id="posts-container">
 
       <article class="post" data-category="career">
@@ -702,16 +706,16 @@
           <a class="post-link" href="college-counslings.html">Read →</a>
         </div>
       </article>
-       <article class="post" data-category="counsling">
+
+      <article class="post" data-category="counsling">
         <div class="post-tag">Counslings</div>
         <h3>Why Freshers Get Rejected: 4 Real Mistakes Keeping You Unemployed</h3>
        <p>Every week, thousands of engineering graduates step into the job market, submit dozens of applications, and wait for interview calls that never arrive</p>
         <div class="post-bottom">
            <span class="post-date">Career Counseling & Guidance</span>
-          <a class="post-link" href="fresher-resume.html">Read →</a>
+          <a class="post-link" href="freshers-resume.html">Read →</a>
         </div>
       </article>
-
 
       <article class="post" data-category="aws">
         <div class="post-tag">AWS & Cloud</div>
@@ -749,6 +753,7 @@
         </div>
       </article>
 
+    </div>
     </div>
   </div>
 </section>
@@ -809,8 +814,13 @@
         post.style.display = 'none';
       }
     });
+
+    // Reset carousel scroll to start whenever the filter changes
+    const container = document.getElementById('posts-container');
+    if (container) container.scrollTo({ left: 0, behavior: 'smooth' });
   }
-   function scrollPosts(direction) {
+
+  function scrollPosts(direction) {
     const container = document.getElementById('posts-container');
     if (!container) return;
     const firstVisible = container.querySelector('.post:not([style*="display: none"])');
