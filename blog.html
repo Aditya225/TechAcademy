@@ -810,6 +810,14 @@
       }
     });
   }
+   function scrollPosts(direction) {
+    const container = document.getElementById('posts-container');
+    if (!container) return;
+    const firstVisible = container.querySelector('.post:not([style*="display: none"])');
+    const cardWidth = firstVisible ? firstVisible.getBoundingClientRect().width : container.clientWidth / 3;
+    const gap = 22;
+    container.scrollBy({ left: direction * (cardWidth + gap), behavior: 'smooth' });
+  }
 </script>
 
 </body>
