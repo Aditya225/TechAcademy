@@ -620,6 +620,130 @@
     display: flex; /* Mobile screen par hamburger toggle show karein */
   }
 }
+
+    
+/* ===== TEAM, ADVISORY & MENTORS ===== */
+.team-section{
+  background:#080b10;
+  padding:105px 0 110px;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.team-intro{
+  max-width:760px;
+  margin:0 auto 52px;
+  text-align:center;
+}
+.team-intro .label{margin-bottom:12px}
+.team-intro h2{
+  margin:0 0 16px;
+  font-size:clamp(34px,4vw,52px);
+  line-height:1.08;
+}
+.team-intro p{
+  color:var(--muted,#aeb8c3);
+  font-size:17px;
+  line-height:1.75;
+}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.team-card{
+  position:relative;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  overflow:hidden;
+  transition:.25s ease;
+}
+.team-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,184,77,.42);
+  box-shadow:0 20px 55px rgba(0,0,0,.25);
+}
+.team-card::after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  right:-85px;top:-90px;
+  border-radius:50%;
+  background:rgba(255,184,77,.055);
+}
+.team-photo{
+  width:82px;height:82px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  background:linear-gradient(145deg,#263241,#111822);
+  border:1px solid rgba(255,184,77,.35);
+  color:#ffd27a;
+  font-size:26px;
+  font-weight:800;
+}
+.team-role{
+  color:#ffd27a;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.team-card h3{
+  margin:0 0 12px;
+  color:#fff;
+  font-size:25px;
+}
+.team-bio{
+  color:#aeb8c3;
+  line-height:1.7;
+  margin:0 0 22px;
+}
+.team-thought{
+  margin-top:20px;
+  padding:18px 18px 18px 20px;
+  border-left:3px solid var(--warm,#E8A87C);
+  background:rgba(255,184,77,.045);
+  border-radius:0 12px 12px 0;
+}
+.team-thought .thought-label{
+  color:#ffd27a;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:7px;
+}
+.team-thought p{
+  margin:0;
+  color:#d5dbe1;
+  font-style:italic;
+  line-height:1.65;
+}
+.team-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:20px;
+}
+.team-tag{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.09);
+  color:#b9c2cc;
+  font-size:12px;
+}
+.team-note{
+  margin:38px auto 0;
+  max-width:900px;
+  text-align:center;
+  color:#8995a2;
+  font-size:13px;
+  line-height:1.6;
+}
   </style>
 
    <script type="application/ld+json">
@@ -1043,6 +1167,155 @@
         The long-term goal is simple: create a community where learning is connected
         to building, careers and real engineering work.
       </p>
+    </div>
+  </div>
+</section>
+  <!-- ===== MEET THE TEAM ===== -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-intro">
+      <div class="label">Meet The Team</div>
+      <h2>People Behind <em>Techs Academy.</em></h2>
+      <p>
+        Techs Academy brings together technology, mentoring, career guidance and
+        business perspectives so learners and organizations can get practical,
+        human guidance beyond the classroom.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Education & Career Advisory -->
+      <article class="team-card">
+        <div class="team-photo">NU</div>
+        <div class="team-role">Education & Career Advisory</div>
+        <h3>Nidhi Uniyal</h3>
+        <p class="team-bio">
+          Nidhi Uniyal brings <strong>8+ years of experience in the education sector</strong>,
+          with a strong understanding of student behaviour, learning patterns and individual
+          development. Her experience working closely with students has helped her develop a
+          practical ability to observe their interests, strengths, participation and learning behaviour.
+          <br><br>
+          At Techs Academy, Nidhi contributes to <strong>student advisory and career-oriented guidance</strong>,
+          helping learners understand their strengths, identify areas for improvement and develop a
+          more structured direction for their future. Over the last <strong>3+ years</strong>, she has also
+          been actively involved in student training and development, focusing not only on academic
+          learning but also on confidence, participation, discipline, communication and practical exposure.
+          <br><br>
+          Her approach is centred around understanding the individual student rather than applying the
+          same roadmap to everyone. By observing a student's interests, behaviour, learning style and
+          areas of comfort, she helps create a more personalised development path. She also works with
+          students to gradually move beyond their comfort zones through structured activities,
+          participation and real-world learning experiences.
+        </p>
+        <div class="team-tags">
+          <span class="team-tag">Student Development</span>
+          <span class="team-tag">Career Guidance</span>
+          <span class="team-tag">Student Behaviour</span>
+          <span class="team-tag">Career Planning</span>
+          <span class="team-tag">Strength & Interest Mapping</span>
+          <span class="team-tag">Confidence Development</span>
+        </div>
+        <div class="team-thought">
+          <div class="thought-label">Her Thought</div>
+          <p>
+            “Every student has a different way of learning, thinking and growing. Our responsibility
+            is not to compare them, but to understand them and help them discover the path where they
+            can perform with confidence.”
+          </p>
+        </div>
+      </article>
+
+      <!-- Student Mentor -->
+      <article class="team-card">
+        <div class="team-photo">K</div>
+        <div class="team-role">Student Mentor | Learning & Development</div>
+        <h3>Kalpana</h3>
+        <p class="team-bio">
+          Kalpana brings <strong>6+ years of experience in student mentoring and development</strong>,
+          with a strong focus on understanding children's behaviour, psychology, interests and individual
+          learning patterns.
+          <br><br>
+          Her mentoring approach goes beyond academics. She believes that understanding a child's likes,
+          dislikes, comfort level, participation and behaviour is important for creating an environment
+          where the child can learn confidently. She works closely with students to understand their
+          individual personalities and identify areas where they may need encouragement, support or
+          additional exposure.
+          <br><br>
+          One important part of her approach is helping students gradually <strong>step outside their
+          comfort zones</strong> through structured activities, participation and interactive learning.
+          She encourages students to remain active beyond classroom study by incorporating curricular
+          and co-curricular activities, helping develop communication, confidence, creativity, teamwork
+          and social interaction alongside academics.
+          <br><br>
+          Her focus is to make learning a more engaging experience where students feel comfortable
+          expressing themselves while also being encouraged to explore new challenges.
+        </p>
+        <div class="team-tags">
+          <span class="team-tag">Student Mentoring</span>
+          <span class="team-tag">Child Behaviour</span>
+          <span class="team-tag">Student Psychology</span>
+          <span class="team-tag">Interest Mapping</span>
+          <span class="team-tag">Confidence Building</span>
+          <span class="team-tag">Activity-Based Learning</span>
+        </div>
+        <div class="team-thought">
+          <div class="thought-label">Her Thought</div>
+          <p>
+            “A child learns best when they feel understood. Once we understand their personality,
+            interests and challenges, we can create opportunities that help them become more confident
+            and willing to explore beyond their comfort zone.”
+          </p>
+        </div>
+      </article>
+
+      <!-- Business Advisory -->
+      <article class="team-card">
+        <div class="team-photo">MS</div>
+        <div class="team-role">Business Advisory | Business Development</div>
+        <h3>Madhuri Sharma</h3>
+        <p class="team-bio">
+          Madhuri Sharma brings <strong>5+ years of experience in business development and advisory</strong>,
+          with practical exposure to understanding customer requirements, client expectations and business
+          opportunities.
+          <br><br>
+          Her strength lies in understanding a requirement from both sides — what the client needs and how
+          the organization can practically deliver it. She focuses on understanding the complete requirement
+          before moving towards a solution.
+          <br><br>
+          At Techs Academy, Madhuri contributes to <strong>business advisory, client communication and business
+          development</strong>, helping the organization build stronger relationships with clients, partners
+          and other stakeholders. She plays an important role in understanding business requirements,
+          communicating technology-driven solutions in a simple and practical manner, and helping clients
+          understand how technology can contribute to their actual business objectives.
+          <br><br>
+          Her approach combines business understanding with technology awareness, helping Techs Academy move
+          towards solutions that are not only technically relevant but also aligned with customer needs and
+          long-term business goals.
+        </p>
+        <div class="team-tags">
+          <span class="team-tag">Business Development</span>
+          <span class="team-tag">Client Understanding</span>
+          <span class="team-tag">Requirement Analysis</span>
+          <span class="team-tag">Business Advisory</span>
+          <span class="team-tag">Technology-Business Alignment</span>
+          <span class="team-tag">Partnership Development</span>
+        </div>
+        <div class="team-thought">
+          <div class="thought-label">Her Thought</div>
+          <p>
+            “Technology should not be introduced just because it is new. It should be understood in the
+            context of the business, the customer and the problem it is expected to solve.”
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="team-note">
+      <strong>Our Team:</strong> Each member brings a different perspective — student development,
+      mentoring, career advisory and business understanding — helping Techs Academy connect learning
+      with practical growth.
     </div>
   </div>
 </section>
