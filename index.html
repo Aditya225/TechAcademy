@@ -470,6 +470,86 @@
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+    .learning-method {
+  background: var(--dark);
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.learning-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 16px;
+  min-height: 190px;
+}
+
+.learning-card .learning-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  color: var(--warm);
+  margin-bottom: 10px;
+}
+
+.learning-card h3 {
+  font-size: 15px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.learning-card p {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* CAREER SUPPORT STRIP */
+
+.support-strip {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid rgba(232, 168, 124, 0.25);
+  border-radius: 16px;
+  background: rgba(232, 168, 124, 0.06);
+}
+
+.support-strip h3 {
+  font-size: 17px;
+  color: var(--white);
+  margin-bottom: 7px;
+}
+
+.support-strip p {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.support-strip a {
+  color: var(--warm);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -704,6 +784,89 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+  <section class="learning-method" id="learning-method">
+  <div class="si">
+
+    <div class="s-header">
+      <div class="s-label">Our Learning Philosophy</div>
+
+      <h2 class="s-title">
+        We Help You Learn How to Learn.
+      </h2>
+
+      <p class="s-sub">
+        We do not begin by simply demonstrating every answer.
+        We first understand what you know, then create space for
+        you to research, build, make mistakes and explain your
+        thinking — with mentor guidance at the right time.
+      </p>
+    </div>
+
+    <div class="learning-grid">
+
+      <div class="learning-card">
+        <div class="learning-num">01</div>
+        <h3>Understand First</h3>
+        <p>
+          We identify your current knowledge, learning gaps and
+          goals before choosing where to begin.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-num">02</div>
+        <h3>Research</h3>
+        <p>
+          You explore documentation, examples and concepts
+          independently instead of only copying a demonstration.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-num">03</div>
+        <h3>Implement</h3>
+        <p>
+          You write the code, test it, debug errors and make
+          the solution work yourself.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-num">04</div>
+        <h3>Understand Deeply</h3>
+        <p>
+          We discuss how it works internally, why decisions
+          matter and what trade-offs exist.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-num">05</div>
+        <h3>Apply in Context</h3>
+        <p>
+          We connect the topic to practical engineering
+          scenarios and how teams use it in real systems.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="support-strip">
+      <h3>Career preparation does not stop at training.</h3>
+
+      <p>
+        We also help learners prepare resumes, practise interviews
+        and understand relevant internship or junior-role
+        opportunities. Where a genuine opening and suitable
+        employer connection are available, we may share an eligible
+        candidate's profile with permission. Referrals, interviews
+        and jobs are not guaranteed.
+      </p>
+    </div>
+
   </div>
 </section>
 
