@@ -1647,70 +1647,8 @@ Sheetal Seriwala</div><div class="author-role">Data Scientist 🎉</div></div></
   </div>
 </div>
 
+<script src ="popup.js" defer></script>
 <script src="forms.js" defer></script>
 <script src="index.js" defer></script>
-<script>
-(function () {
-
-  const modal = document.getElementById("ta-onboarding");
-  const closeBtn = document.getElementById("ta-close");
-  const skipBtn = document.getElementById("ta-skip");
-
-  if (!modal) return;
-
-  const STORAGE_KEY = "ta_onboarding_seen";
-
-  function closeModal() {
-    modal.classList.remove("ta-active");
-    modal.setAttribute("aria-hidden", "true");
-    sessionStorage.setItem(STORAGE_KEY, "true");
-  }
-
-  function openModal() {
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-
-    modal.classList.add("ta-active");
-    modal.setAttribute("aria-hidden", "false");
-
-    closeBtn.focus();
-  }
-
-  // Show popup after 6 seconds
-  if (!sessionStorage.getItem(STORAGE_KEY)) {
-    setTimeout(openModal, 6000);
-  }
-
-  // Close button
-  closeBtn.addEventListener("click", closeModal);
-
-  // Skip button
-  skipBtn.addEventListener("click", closeModal);
-
-  // Click outside modal
-  modal.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Escape key
-  document.addEventListener("keydown", function (event) {
-    if (
-      event.key === "Escape" &&
-      modal.classList.contains("ta-active")
-    ) {
-      closeModal();
-    }
-  });
-
-  // Mark as seen when a category is selected
-  modal.querySelectorAll(".ta-option").forEach(function (link) {
-    link.addEventListener("click", function () {
-      sessionStorage.setItem(STORAGE_KEY, "true");
-    });
-  });
-
-})();
-</script>
 </body>
 </html>
