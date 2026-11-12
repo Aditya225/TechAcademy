@@ -414,6 +414,9 @@ document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("c
 document.querySelectorAll("[data-course]").forEach(button=>button.addEventListener("click",()=>{const course=button.dataset.course;if(typeof gtag==="function")gtag("event","course_interest",{course_name:course});try{localStorage.setItem("selectedCourse",course)}catch(e){}}));
 document.getElementById("courseCta").addEventListener("click",()=>{if(typeof gtag==="function")gtag("event","course_guidance_click")});
 document.getElementById("year").textContent=new Date().getFullYear();
+ 
 </script>
+<script src ="popup.js" defer></script>
+<script src ="tracking.js" defer></script>
 </body>
 </html>
