@@ -1,4 +1,3 @@
-
 (function () {
 
   const modal = document.getElementById("ta-onboarding");
@@ -53,15 +52,6 @@
   // Skip button
   skipBtn.addEventListener("click", function () {
     closeModal("skip_clicked");
-  });
-
-  // Click outside
-  modal.addEventListener("click", function (event) {
-
-    if (event.target === modal) {
-      closeModal("close_clicked");
-    }
-
   });
 
   // Escape key
