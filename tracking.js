@@ -4,7 +4,7 @@
 
 (function () {
 
-  const API_URL = "https://script.google.com/macros/s/AKfycbxJw7VY9l07FCIxmbEcdRpp0HNHMqLPoy29qCpj31_G5kvLBL4vRHtuXvdrMxJ7IMhchA/exec";
+  const API_URL = "https://script.google.com/macros/s/AKfycbxeLL0sdUbyRrOCi6k-wOTzCs4gK_sPR0XYCAO_wKIdt7ikFJToescCAo1oT2pWWVV3Hg/exec";
 
   const VISITOR_KEY = "ta_visitor_id";
   const SESSION_KEY = "ta_session_id";
