@@ -39,9 +39,9 @@
     closeBtn.focus();
   }
 
-  // Show after 6 seconds
+  // Show after 2 seconds
   if (!sessionStorage.getItem(STORAGE_KEY)) {
-    setTimeout(openModal, 6000);
+    setTimeout(openModal, 2000);
   }
 
   // Close button
