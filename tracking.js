@@ -1,4 +1,3 @@
-
 /*
  * TECHS ACADEMY - FRONTEND TRACKER
  */
@@ -9,8 +8,12 @@
 
   const VISITOR_KEY = "ta_visitor_id";
   const SESSION_KEY = "ta_session_id";
+  const LANDING_KEY = "ta_landing_page";
+  const GEO_CACHE_KEY = "ta_geo_cache_v1";
+  const GEO_TTL_MS = 24 * 60 * 60 * 1000;
 
-  // Generate anonymous ID
+  let cachedGeo = { country: "Unknown", state: "Unknown" };
+
   function generateId() {
     if (window.crypto && crypto.randomUUID) {
       return crypto.randomUUID();
@@ -22,7 +25,6 @@
       Math.random().toString(36).slice(2, 14);
   }
 
-  // Get or create visitor ID
   function getVisitorId() {
     let id = localStorage.getItem(VISITOR_KEY);
 
@@ -35,7 +37,6 @@
     return { id, isNew: false };
   }
 
-  // Get or create session ID
   function getSessionId() {
     let id = sessionStorage.getItem(SESSION_KEY);
 
@@ -47,11 +48,20 @@
     return id;
   }
 
+  function getLandingPage() {
+    let landing = sessionStorage.getItem(LANDING_KEY);
+    if (!landing) {
+      landing = location.pathname;
+      sessionStorage.setItem(LANDING_KEY, landing);
+    }
+    return landing;
+  }
+
   const visitor = getVisitorId();
   const visitorId = visitor.id;
   const sessionId = getSessionId();
+  const landingPage = getLandingPage();
 
-  // Coarse device category
   function getDevice() {
     const ua = navigator.userAgent;
 
@@ -64,30 +74,118 @@
     return "Desktop";
   }
 
-  // Send event to Google Apps Script
-  function track(eventName, category = "Unknown") {
+  function getReferrerOrigin() {
+    try {
+      return document.referrer
+        ? new URL(document.referrer).origin
+        : "Direct";
+    } catch (error) {
+      return "Unknown";
+    }
+  }
 
-    const eventData = {
-      visitorId: visitorId,
-      sessionId: sessionId,
-      event: eventName,
-      category: category,
+  function getAcquisitionInfo() {
+    const params = new URLSearchParams(location.search);
+    const utmSource = (params.get("utm_source") || "").trim();
+    const utmMedium = (params.get("utm_medium") || "").trim();
+    const utmCampaign = (params.get("utm_campaign") || "").trim();
+    const referrerOrigin = getReferrerOrigin();
 
-      // Store path only, not query parameters or fragments
-      page: location.pathname,
+    let source = "Direct";
+    if (utmSource) {
+      source = utmSource;
+    } else if (referrerOrigin && referrerOrigin !== "Direct" && referrerOrigin !== "Unknown") {
+      try {
+        source = new URL(referrerOrigin).hostname.replace(/^www\./, "");
+      } catch (e) {
+        source = referrerOrigin;
+      }
+    }
 
-      title: document.title.slice(0, 200),
+    let medium = "none";
+    if (utmMedium) {
+      medium = utmMedium;
+    } else if (source === "Direct") {
+      medium = "direct";
+    } else {
+      medium = "referral";
+    }
 
-      // Only referrer origin, not full URL
-      referrer: getReferrerOrigin(),
-
-      device: getDevice()
+    return {
+      source: source.slice(0, 100),
+      medium: medium.slice(0, 100),
+      campaign: utmCampaign.slice(0, 120)
     };
+  }
 
-    const body = JSON.stringify(eventData);
+  function readCachedGeo() {
+    try {
+      const raw = localStorage.getItem(GEO_CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.timestamp) return null;
+      if (Date.now() - parsed.timestamp > GEO_TTL_MS) return null;
+      return {
+        country: parsed.country || "Unknown",
+        state: parsed.state || "Unknown"
+      };
+    } catch (e) {
+      return null;
+    }
+  }
 
-    // Apps Script cross-origin requests:
-    // no-cors avoids a preflight request.
+  function writeCachedGeo(geo) {
+    try {
+      localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({
+        country: geo.country || "Unknown",
+        state: geo.state || "Unknown",
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Ignore storage quota / privacy mode errors
+    }
+  }
+
+  async function fetchGeoLocation() {
+    const fromCache = readCachedGeo();
+    if (fromCache) {
+      cachedGeo = fromCache;
+      return cachedGeo;
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(function () {
+      controller.abort();
+    }, 1500);
+
+    try {
+      const response = await fetch("https://ipapi.co/json/", {
+        signal: controller.signal
+      });
+      clearTimeout(timer);
+
+      if (!response.ok) {
+        return cachedGeo;
+      }
+
+      const data = await response.json();
+      const geo = {
+        country: (data.country_name || data.country || "Unknown").toString().slice(0, 100),
+        state: (data.region || data.region_code || "Unknown").toString().slice(0, 100)
+      };
+
+      cachedGeo = geo;
+      writeCachedGeo(geo);
+      return cachedGeo;
+    } catch (error) {
+      clearTimeout(timer);
+      return cachedGeo;
+    }
+  }
+
+  function sendPayload(payload) {
+    const body = JSON.stringify(payload);
+
     fetch(API_URL, {
       method: "POST",
       mode: "no-cors",
@@ -101,28 +199,59 @@
     });
   }
 
-  function getReferrerOrigin() {
-    try {
-      return document.referrer
-        ? new URL(document.referrer).origin
-        : "Direct";
-    } catch (error) {
-      return "Unknown";
+  function track(eventName, category = "Unknown") {
+    const acquisition = getAcquisitionInfo();
+
+    const eventData = {
+      visitorId: visitorId,
+      sessionId: sessionId,
+      event: eventName,
+      category: category,
+
+      source: acquisition.source,
+      medium: acquisition.medium,
+      campaign: acquisition.campaign,
+
+      country: cachedGeo.country,
+      state: cachedGeo.state,
+
+      landingPage: landingPage,
+      page: location.pathname,
+      title: document.title.slice(0, 200),
+      referrer: getReferrerOrigin(),
+      device: getDevice()
+    };
+
+    if (cachedGeo.country === "Unknown" && cachedGeo.state === "Unknown") {
+      Promise.race([
+        fetchGeoLocation(),
+        new Promise(function (resolve) {
+          setTimeout(function () {
+            resolve(cachedGeo);
+          }, 600);
+        })
+      ]).then(function (geo) {
+        eventData.country = (geo && geo.country) || "Unknown";
+        eventData.state = (geo && geo.state) || "Unknown";
+        sendPayload(eventData);
+      });
+      return;
     }
+
+    sendPayload(eventData);
   }
 
-  // Public tracking method
   window.TAAnalytics = {
     track: track,
     visitorId: visitorId
   };
 
-  // Track new visitor
+  fetchGeoLocation();
+
   if (visitor.isNew) {
     track("visitor_first_seen");
   }
 
-  // Track each page load
   track("page_view");
 
 })();
