@@ -4,24 +4,15 @@
 
 (function () {
 
-  const API_URL = "https://script.google.com/macros/s/AKfycbxJw7VY9l07FCIxmbEcdRpp0HNHMqLPoy29qCpj31_G5kvLBL4vRHtuXvdrMxJ7IMhchA/exec";
+  const API_URL = "https://script.google.com/macros/s/AKfycbxeLL0sdUbyRrOCi6k-wOTzCs4gK_sPR0XYCAO_wKIdt7ikFJToescCAo1oT2pWWVV3Hg/exec";
 
   const VISITOR_KEY = "ta_visitor_id";
   const SESSION_KEY = "ta_session_id";
   const LANDING_KEY = "ta_landing_page";
   const GEO_CACHE_KEY = "ta_geo_cache_v1";
   const GEO_TTL_MS = 24 * 60 * 60 * 1000;
-  const IGNORE_KEY = "ta_ignore_me";
 
-  let cachedGeo = { ip: "", country: "Unknown", state: "Unknown" };
-
-  function isIgnoredUser() {
-    try {
-      return localStorage.getItem(IGNORE_KEY) === "true";
-    } catch (e) {
-      return false;
-    }
-  }
+  let cachedGeo = { country: "Unknown", state: "Unknown" };
 
   function generateId() {
     if (window.crypto && crypto.randomUUID) {
@@ -135,7 +126,6 @@
       if (!parsed || !parsed.timestamp) return null;
       if (Date.now() - parsed.timestamp > GEO_TTL_MS) return null;
       return {
-        ip: parsed.ip || "",
         country: parsed.country || "Unknown",
         state: parsed.state || "Unknown"
       };
@@ -147,7 +137,6 @@
   function writeCachedGeo(geo) {
     try {
       localStorage.setItem(GEO_CACHE_KEY, JSON.stringify({
-        ip: geo.ip || "",
         country: geo.country || "Unknown",
         state: geo.state || "Unknown",
         timestamp: Date.now()
@@ -181,7 +170,6 @@
 
       const data = await response.json();
       const geo = {
-        ip: (data.ip || "").toString().trim().slice(0, 64),
         country: (data.country_name || data.country || "Unknown").toString().slice(0, 100),
         state: (data.region || data.region_code || "Unknown").toString().slice(0, 100)
       };
@@ -212,8 +200,6 @@
   }
 
   function track(eventName, category = "Unknown") {
-    if (isIgnoredUser()) return;
-
     const acquisition = getAcquisitionInfo();
 
     const eventData = {
@@ -221,7 +207,6 @@
       sessionId: sessionId,
       event: eventName,
       category: category,
-      visitorIp: cachedGeo.ip || "",
 
       source: acquisition.source,
       medium: acquisition.medium,
@@ -243,10 +228,9 @@
         new Promise(function (resolve) {
           setTimeout(function () {
             resolve(cachedGeo);
-          }, 1000);
+          }, 600);
         })
       ]).then(function (geo) {
-        eventData.visitorIp = (geo && geo.ip) || cachedGeo.ip || "";
         eventData.country = (geo && geo.country) || "Unknown";
         eventData.state = (geo && geo.state) || "Unknown";
         sendPayload(eventData);
@@ -261,8 +245,6 @@
     track: track,
     visitorId: visitorId
   };
-
-  if (isIgnoredUser()) return;
 
   fetchGeoLocation();
 
