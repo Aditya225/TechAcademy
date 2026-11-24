@@ -215,7 +215,7 @@
     .why-card p{font-size:13px;color:var(--gray);line-height:1.6}
 
     /* FOUNDER */
-    .founder{background:var(--dark)}
+    .founder{background:var(--dark2)}
     .founder-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start}
     .founder-photo-wrap{position:relative}
     .founder-photo{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:1px solid var(--border)}
@@ -231,7 +231,7 @@
     .win-text{font-size:12px;color:var(--gray)}
 
     /* TESTIMONIALS */
-    .testimonials{background:var(--dark2)}
+    .testimonials{background:var(--dark)}
     .company-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .badge{background:rgba(232,168,124,0.12);border:1px solid rgba(232,168,124,0.25);color:var(--warm);padding:5px 16px;border-radius:50px;font-size:12px;font-weight:700}
     .carousel-wrap{display:flex;align-items:center;gap:14px}
@@ -284,7 +284,8 @@
     .form-status{margin-top:14px;padding:11px 14px;border-radius:10px;font-size:13px;line-height:1.5}
 
     /* CONTACT */
-    .contact{background:var(--dark2)}
+    .contact{background:var(--dark2)} 
+    /* .contact {    background: radial-gradient(ellipse at 30% 50%, rgba(232, 168, 124, 0.1) 0%, transparent 60%), var(--dark);} */
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
     .contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px}
     .contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(232,168,124,0.1);border:1px solid rgba(232,168,124,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
@@ -305,7 +306,8 @@
     .consult-success p{color:var(--teal);font-weight:600;font-size:14px}
 
     /* SOCIAL */
-    .social{background:var(--dark);padding:70px 40px;text-align:center}
+     .social{background:var(--dark);padding:70px 40px;text-align:center}
+    /* .social{background:var(--dark2);padding:70px 40px;text-align:center} */
     .social-cards{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:36px}
     .social-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 28px;text-decoration:none;transition:all 0.3s;min-width:180px}
     .social-card:hover{border-color:rgba(232,168,124,0.3);transform:translateY(-3px)}
@@ -862,7 +864,7 @@
 </div>
 
 <!-- ABOUT -->
-<section class="about" id="about">
+<!-- <section class="about" id="about">
   <div class="si">
     <div class="about-grid">
       <div class="about-text">
@@ -886,10 +888,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- SERVICES -->
-<section class="about" id="skill-assessment">
+<!-- <section class="about" id="skill-assessment">
   <div class="si">
     <div class="s-header"><div class="s-label">For Freshers & Job Seekers</div><h2 class="s-title">Your Resume Is Only the Beginning.</h2><p class="s-sub">For candidates, we look beyond keywords. The goal is to understand what you know, what you can explain, and where you need to improve.</p></div>
     <div class="about-grid">
@@ -908,11 +910,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="si">
-    <div class="s-header"><div class="s-label">How It Works</div><h2 class="s-title">Understand. Assess. Guide. Develop.</h2><p class="s-sub">Our process changes with the person we are helping — because a school student, fresher and working professional do not need the same solution.</p></div>
+    <div class="s-header"><div class="s-label">What Techs Academy Does</div><h2 class="s-title">Understand. Assess. Guide. Develop.</h2><p class="s-sub">Our process changes with the person we are helping — because a school student, fresher and working professional do not need the same solution.</p></div>
     <div class="process-tabs">
       <button class="process-tab active" onclick="switchTab('candidate')">🎯 Candidate Assessment</button>
       <button class="process-tab" onclick="switchTab('school')">🧒 School Student</button>
@@ -1107,30 +1109,21 @@
 
 
         <p class="founder-bio">
-
           Hi! I’m Aditya, the founder of Techs Academy.
-
-          <br><br>
-
+          <br>
           My journey in technology has given me the opportunity to work
           as a developer, collaborate with technical teams, understand
           real-world engineering challenges, and work with people at
           different stages of their learning and career journeys.
-
-          <br><br>
-
+          <br>
           Over time, I noticed a common gap.
-
-          <br><br>
-
+          <br>
           Many students complete courses, collect certificates, build
           projects, and add skills to their resumes — yet when they face
           a technical discussion, assessment, or interview, they often
           struggle to explain what they have learned, solve problems
           independently, or understand what they actually need to improve.
-
-          <br><br>
-
+          <br>
           At the same time, many job seekers know they need to improve
           their skills, resume, or interview preparation, but don't
           always know where the actual gap is or what they should focus
@@ -1165,103 +1158,7 @@
 
 
         <!-- WHAT I HELP WITH -->
-        <h3
-          style="color:var(--warm); margin-top:24px; margin-bottom:16px;"
-        >
-          How We Help
-        </h3>
-
-
-        <div class="founder-wins">
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              1:1 Technical Mentorship
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Technical Skill Assessment
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Career Guidance & Roadmapping
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Mock Interviews & Interview Preparation
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Project & Practical Learning Guidance
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Resume & Professional Profile Guidance
-            </div>
-          </div>
-
-          <div class="win-item">
-            <div class="win-dot"></div>
-            <div class="win-text">
-              Personalized Learning Roadmaps
-            </div>
-          </div>
-
-        </div>
-
-
-        <!-- FOUNDER APPROACH -->
-        <h3
-          style="color:var(--warm); margin-top:28px; margin-bottom:12px;"
-        >
-          Our Approach
-        </h3>
-
-        <p class="founder-bio">
-
-          I believe good mentorship is not about giving everyone the
-          same roadmap.
-
-          <br><br>
-
-          It is about understanding the individual, identifying what
-          needs improvement, and helping them take the right next step.
-
-          <br><br>
-
-          Every learner has a different starting point, different
-          strengths, different challenges, and different goals.
-
-        </p>
-
-
-        <div
-          style="
-            margin:20px 0;
-            font-weight:700;
-            color:var(--warm);
-            letter-spacing:.3px;
-          "
-        >
-          Understand → Assess → Identify Gaps → Guide → Practice → Improve
-        </div>
-
+       
 
         <p class="founder-bio">
 
@@ -1322,7 +1219,7 @@ Sheetal Seriwala</div><div class="author-role">Data Scientist 🎉</div></div></
 </section>
 
 <!-- BOOK DEMO -->
-<section class="book-demo" id="book-demo">
+<!-- <section class="book-demo" id="book-demo">
   <div class="si">
     <div class="s-header" style="text-align:center">
       <div class="s-label">Get Started</div>
@@ -1449,7 +1346,7 @@ Sheetal Seriwala</div><div class="author-role">Data Scientist 🎉</div></div></
 </form>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
