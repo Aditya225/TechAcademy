@@ -763,6 +763,269 @@
     }
   }
 
+    
+/* ==========================================
+   TECHS ACADEMY - HOMEPAGE JOB SEEKER SUPPORT
+========================================== */
+
+.ta-home-job-support {
+  --home-dark: #0f0f1a;
+  --home-dark2: #1a1a2e;
+  --home-dark3: #16213e;
+  --home-gold: #E8A87C;
+  --home-gold2: #d4915f;
+  --home-white: #ffffff;
+  --home-gray: #94a3b8;
+
+  width: 100%;
+  padding: 75px 20px;
+  background: var(--home-dark);
+  color: #e2e8f0;
+}
+
+.ta-home-job-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.ta-home-job-header {
+  max-width: 780px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.ta-home-job-label {
+  display: inline-block;
+  color: var(--home-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.ta-home-job-header h2 {
+  color: var(--home-white);
+  font-size: clamp(29px, 4vw, 42px);
+  line-height: 1.3;
+  margin: 0 0 18px;
+}
+
+.ta-home-job-header h2 span {
+  display: block;
+  color: var(--home-gold);
+}
+
+.ta-home-job-header p {
+  color: var(--home-gray);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* Cards */
+
+.ta-home-job-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.ta-home-job-card {
+  padding: 26px 22px;
+  background: var(--home-dark2);
+  border: 1px solid rgba(232, 168, 124, 0.14);
+  border-radius: 12px;
+  transition: transform 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.ta-home-job-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--home-gold);
+}
+
+.ta-home-job-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(232, 168, 124, 0.10);
+  color: var(--home-gold);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.ta-home-job-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ta-home-job-card h3 {
+  color: var(--home-white);
+  font-size: 17px;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.ta-home-job-card p {
+  color: var(--home-gray);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Referral CTA */
+
+.ta-home-job-referral {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 32px;
+  background: linear-gradient(
+    120deg,
+    var(--home-dark2),
+    var(--home-dark3)
+  );
+  border: 1px solid rgba(232, 168, 124, 0.25);
+  border-radius: 14px;
+}
+
+.ta-home-job-referral-content {
+  max-width: 680px;
+}
+
+.ta-home-job-referral-content > span {
+  display: inline-block;
+  color: var(--home-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  margin-bottom: 10px;
+}
+
+.ta-home-job-referral-content h3 {
+  color: var(--home-white);
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.ta-home-job-referral-content h3 strong {
+  color: var(--home-gold);
+}
+
+.ta-home-job-referral-content p {
+  color: var(--home-gray);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Button */
+
+.ta-home-job-cta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ta-home-job-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 22px;
+  background: var(--home-gold);
+  color: var(--home-dark);
+  border: 1px solid var(--home-gold);
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ta-home-job-button:hover {
+  background: var(--home-gold2);
+  border-color: var(--home-gold2);
+  color: var(--home-dark);
+  transform: translateY(-2px);
+}
+
+.ta-home-job-button span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.ta-home-job-cta small {
+  color: var(--home-gray);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .ta-home-job-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ta-home-job-referral {
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .ta-home-job-support {
+    padding: 50px 16px;
+  }
+
+  .ta-home-job-header {
+    margin-bottom: 32px;
+  }
+
+  .ta-home-job-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ta-home-job-card {
+    padding: 23px 20px;
+  }
+
+  .ta-home-job-referral {
+    flex-direction: column;
+    padding: 25px 20px;
+    gap: 22px;
+  }
+
+  .ta-home-job-referral-content h3 {
+    font-size: 22px;
+  }
+
+  .ta-home-job-cta {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .ta-home-job-button {
+    width: 100%;
+  }
+
+}
+
+
   </style>
 </head>
 <body>
@@ -1347,6 +1610,159 @@ Sheetal Seriwala</div><div class="author-role">Data Scientist 🎉</div></div></
     </div>
   </div>
 </section> -->
+
+  
+<!-- TECHS ACADEMY - JOB SEEKER SUPPORT -->
+
+<section class="ta-home-job-support" id="job-seeker-support">
+
+  <div class="ta-home-job-container">
+
+    <!-- Header -->
+    <div class="ta-home-job-header">
+
+      <span class="ta-home-job-label">
+        CAREER & HIRING SUPPORT
+      </span>
+
+      <h2>
+        Beyond Resume Preparation.
+        <span>Get Ready for Real Opportunities.</span>
+      </h2>
+
+      <p>
+        We help freshers and experienced professionals
+        understand their technical readiness, improve their
+        interview performance and get considered for relevant
+        hiring opportunities.
+      </p>
+
+    </div>
+
+    <!-- Services -->
+    <div class="ta-home-job-grid">
+
+      <div class="ta-home-job-card">
+
+        <div class="ta-home-job-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7">
+            <path d="M4 4h16v16H4z"/>
+            <path d="M8 9h8M8 13h8M8 17h5"/>
+          </svg>
+        </div>
+
+        <h3>Technical Profile Review</h3>
+
+        <p>
+          Understand how your technical skills, experience
+          and project background align with relevant job roles.
+        </p>
+
+      </div>
+
+      <div class="ta-home-job-card">
+
+        <div class="ta-home-job-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="m8 10 3 3-3 3M13 16h3"/>
+          </svg>
+        </div>
+
+        <h3>Technical Assessment</h3>
+
+        <p>
+          Evaluate your technical fundamentals and ability
+          to apply knowledge in practical situations.
+        </p>
+
+      </div>
+
+      <div class="ta-home-job-card">
+
+        <div class="ta-home-job-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+          </svg>
+        </div>
+
+        <h3>Mock Technical Interview</h3>
+
+        <p>
+          Experience interview-style questions and understand
+          how effectively you explain your projects and
+          technical decisions.
+        </p>
+
+      </div>
+
+      <div class="ta-home-job-card">
+
+        <div class="ta-home-job-icon">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.7">
+            <path d="M4 19V5M4 19h17"/>
+            <path d="m7 15 4-4 3 2 6-7"/>
+          </svg>
+        </div>
+
+        <h3>Performance Feedback</h3>
+
+        <p>
+          Understand your strengths, improvement areas and
+          what you should focus on before your next interview.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Referral Information -->
+    <div class="ta-home-job-referral">
+
+      <div class="ta-home-job-referral-content">
+
+        <span>HIRING & REFERRAL SUPPORT</span>
+
+        <h3>
+          Your Preparation Can Open
+          <strong>New Opportunities.</strong>
+        </h3>
+
+        <p>
+          Suitable candidate profiles may be considered for
+          referral opportunities through our hiring partners,
+          based on their skills, profile and available
+          recruitment requirements.
+        </p>
+
+      </div>
+
+      <div class="ta-home-job-cta">
+
+        <a href="/career-guidance#technical-referral"
+           class="ta-home-job-button">
+          Explore Our Process
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <small>
+          No job placement or interview guarantee.
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- END JOB SEEKER SUPPORT -->
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
